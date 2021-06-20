@@ -6,5 +6,6 @@ Variable Selection:
 DateCode, Value (renamed as "Vlaue (million pounds (GBP))"), Industry Sector (SIC 07), Export Destination (filter out "International")
 
 Primary Objectives:
+Time trend of the value group by industry and Destination.
 
 Secondary Objectives
