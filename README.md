@@ -12,6 +12,9 @@ Secondary Objectives
 
 
 Work Distribution:
+
   Data Analysis: Memgran Li, Shaoquan Li
+  
   Poster: Steven Kwok, Shuning Li
+  
   Presentation:Aishwin Tikku, Shaoquan Li
