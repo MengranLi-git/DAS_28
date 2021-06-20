@@ -9,3 +9,9 @@ Primary Objectives:
 Time trend of the value group by industry and Destination.
 
 Secondary Objectives
+
+
+Work Distribution:
+  Data Analysis: Memgran Li, Shaoquan Li
+  Poster: Steven Kwok, Shuning Li
+  Presentation:Aishwin Tikku, S
