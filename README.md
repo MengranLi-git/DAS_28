@@ -17,4 +17,4 @@ Work Distribution:
   
   Poster: Steven Kwok, Shuning Li
   
-  Presentation:Aishwin Tikku, Shaoquan Li
+  Presentation: Aishwin Tikku, Shaoquan Li
