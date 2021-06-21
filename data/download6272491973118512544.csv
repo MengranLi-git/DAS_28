@@ -1,0 +1,942 @@
+FeatureCode,DateCode,Measurement,Units,Value,Age
+S12000039,2018,Count,Cards,24068,All
+S12000039,2020,Count,Cards,25552,All
+S12000039,2016,Count,Cards,22695,All
+S12000039,2015,Count,Cards,23104,All
+S12000039,2012,Count,Cards,17841,60 years and over
+S12000039,2020,Count,Cards,22167,60 years and over
+S12000039,2012,Count,Cards,22110,All
+S12000039,2011,Count,Cards,21616,All
+S12000039,2014,Count,Cards,22362,All
+S12000039,2013,Count,Cards,22124,All
+S12000039,2018,Count,Cards,20308,60 years and over
+S12000039,2019,Count,Cards,25219,All
+S12000039,2017,Count,Cards,19312,60 years and over
+S12000039,2011,Count,Cards,17523,60 years and over
+S12000039,2015,Count,Cards,19398,60 years and over
+S12000039,2014,Count,Cards,18811,60 years and over
+S12000039,2016,Count,Cards,18972,60 years and over
+S12000039,2019,Count,Cards,21431,60 years and over
+S12000039,2013,Count,Cards,18895,60 years and over
+S12000039,2017,Count,Cards,23059,All
+S12000039,2010,Count,Cards,17250,60 years and over
+S12000039,2006,Count,Cards,17662,All
+S12000039,2007,Count,Cards,15621,60 years and over
+S12000039,2006,Count,Cards,14289,60 years and over
+S12000039,2010,Count,Cards,21205,All
+S12000039,2007,Count,Cards,19248,All
+S12000040,2016,Count,Cards,32920,60 years and over
+S12000040,2015,Count,Cards,39115,All
+S12000040,2014,Count,Cards,33104,60 years and over
+S12000040,2012,Count,Cards,30549,60 years and over
+S12000040,2019,Count,Cards,42308,All
+S12000040,2007,Count,Cards,24989,60 years and over
+S12000040,2017,Count,Cards,33889,60 years and over
+S12000040,2006,Count,Cards,22358,60 years and over
+S12000040,2020,Count,Cards,42179,All
+S12000040,2019,Count,Cards,36955,60 years and over
+S12000040,2013,Count,Cards,32260,60 years and over
+S12000040,2011,Count,Cards,29620,60 years and over
+S12000040,2018,Count,Cards,35317,60 years and over
+S12000040,2010,Count,Cards,28701,60 years and over
+S12000040,2006,Count,Cards,26704,All
+S12000040,2018,Count,Cards,40546,All
+S12000040,2015,Count,Cards,34271,60 years and over
+S12000040,2016,Count,Cards,37942,All
+S12000040,2010,Count,Cards,33811,All
+S12000040,2007,Count,Cards,29507,All
+S12000040,2014,Count,Cards,37610,All
+S12000040,2020,Count,Cards,37679,60 years and over
+S12000040,2013,Count,Cards,36145,All
+S12000040,2011,Count,Cards,34996,All
+S12000040,2017,Count,Cards,39045,All
+S12000040,2012,Count,Cards,36169,All
+S92000003,2019,Count,Cards,1436617,All
+S92000003,2015,Count,Cards,1170709,60 years and over
+S92000003,2020,Count,Cards,1440804,All
+S92000003,2007,Count,Cards,1090992,All
+S92000003,2011,Count,Cards,1233490,All
+S92000003,2010,Count,Cards,1025813,60 years and over
+S92000003,2010,Count,Cards,1202745,All
+S92000003,2014,Count,Cards,1297751,All
+S92000003,2018,Count,Cards,1203751,60 years and over
+S92000003,2012,Count,Cards,1265354,All
+S92000003,2013,Count,Cards,1279813,All
+S92000003,2006,Count,Cards,831276,60 years and over
+S92000003,2014,Count,Cards,1142923,60 years and over
+S92000003,2015,Count,Cards,1334517,All
+S92000003,2007,Count,Cards,926726,60 years and over
+S92000003,2012,Count,Cards,1076202,60 years and over
+S92000003,2017,Count,Cards,1327082,All
+S92000003,2020,Count,Cards,1281703,60 years and over
+S92000003,2018,Count,Cards,1378098,All
+S92000003,2016,Count,Cards,1313251,All
+S92000003,2016,Count,Cards,1146751,60 years and over
+S92000003,2019,Count,Cards,1256531,60 years and over
+S92000003,2011,Count,Cards,1050778,60 years and over
+S92000003,2013,Count,Cards,1141214,60 years and over
+S92000003,2017,Count,Cards,1156063,60 years and over
+S12000005,2017,Count,Cards,11000,60 years and over
+S12000005,2007,Count,Cards,8667,60 years and over
+S12000005,2012,Count,Cards,10373,60 years and over
+S12000005,2020,Count,Cards,11615,60 years and over
+S12000005,2006,Count,Cards,8037,60 years and over
+S12000005,2010,Count,Cards,9757,60 years and over
+S12000005,2011,Count,Cards,10126,60 years and over
+S12000005,2013,Count,Cards,10580,60 years and over
+S12000005,2011,Count,Cards,11604,All
+S12000005,2014,Count,Cards,10797,60 years and over
+S12000005,2012,Count,Cards,11924,All
+S12000005,2016,Count,Cards,12144,All
+S12000005,2018,Count,Cards,11288,60 years and over
+S12000005,2007,Count,Cards,9898,All
+S12000005,2010,Count,Cards,11188,All
+S12000005,2014,Count,Cards,12051,All
+S12000005,2017,Count,Cards,12387,All
+S12000005,2020,Count,Cards,12857,All
+S12000005,2015,Count,Cards,11072,60 years and over
+S12000005,2013,Count,Cards,11726,All
+S12000005,2018,Count,Cards,12711,All
+S12000005,2015,Count,Cards,12406,All
+S12000005,2006,Count,Cards,9169,All
+S12000005,2016,Count,Cards,10792,60 years and over
+S12000005,2019,Count,Cards,11594,60 years and over
+S12000005,2019,Count,Cards,13047,All
+S12000006,2007,Count,Cards,28923,60 years and over
+S12000006,2014,Count,Cards,40929,All
+S12000006,2012,Count,Cards,40050,All
+S12000006,2013,Count,Cards,39979,All
+S12000006,2020,Count,Cards,45288,All
+S12000006,2016,Count,Cards,38500,60 years and over
+S12000006,2017,Count,Cards,41180,All
+S12000006,2006,Count,Cards,25853,60 years and over
+S12000006,2007,Count,Cards,32025,All
+S12000006,2006,Count,Cards,28558,All
+S12000006,2010,Count,Cards,37518,All
+S12000006,2011,Count,Cards,38768,All
+S12000006,2010,Count,Cards,33830,60 years and over
+S12000006,2019,Count,Cards,41092,60 years and over
+S12000006,2018,Count,Cards,39393,60 years and over
+S12000006,2013,Count,Cards,37331,60 years and over
+S12000006,2020,Count,Cards,41857,60 years and over
+S12000006,2014,Count,Cards,37884,60 years and over
+S12000006,2019,Count,Cards,44901,All
+S12000006,2016,Count,Cards,41846,All
+S12000006,2017,Count,Cards,37748,60 years and over
+S12000006,2015,Count,Cards,42125,All
+S12000006,2018,Count,Cards,42935,All
+S12000006,2012,Count,Cards,36094,60 years and over
+S12000006,2011,Count,Cards,34969,60 years and over
+S12000006,2015,Count,Cards,38896,60 years and over
+S12000008,2010,Count,Cards,24569,60 years and over
+S12000008,2011,Count,Cards,25088,60 years and over
+S12000008,2018,Count,Cards,27656,60 years and over
+S12000008,2015,Count,Cards,32162,All
+S12000008,2014,Count,Cards,27173,60 years and over
+S12000008,2016,Count,Cards,26770,60 years and over
+S12000008,2017,Count,Cards,26924,60 years and over
+S12000008,2017,Count,Cards,31499,All
+S12000008,2018,Count,Cards,32392,All
+S12000008,2020,Count,Cards,33206,All
+S12000008,2016,Count,Cards,31210,All
+S12000008,2015,Count,Cards,27787,60 years and over
+S12000008,2020,Count,Cards,28946,60 years and over
+S12000008,2006,Count,Cards,20127,60 years and over
+S12000008,2019,Count,Cards,33399,All
+S12000008,2013,Count,Cards,31013,All
+S12000008,2014,Count,Cards,31397,All
+S12000008,2019,Count,Cards,28538,60 years and over
+S12000008,2007,Count,Cards,22066,60 years and over
+S12000008,2013,Count,Cards,27238,60 years and over
+S12000008,2012,Count,Cards,25621,60 years and over
+S12000008,2011,Count,Cards,29987,All
+S12000008,2007,Count,Cards,26322,All
+S12000008,2010,Count,Cards,29289,All
+S12000008,2006,Count,Cards,24106,All
+S12000008,2012,Count,Cards,30704,All
+S12000010,2017,Count,Cards,24968,60 years and over
+S12000010,2012,Count,Cards,22057,60 years and over
+S12000010,2007,Count,Cards,18367,60 years and over
+S12000010,2019,Count,Cards,26928,60 years and over
+S12000010,2014,Count,Cards,23650,60 years and over
+S12000010,2015,Count,Cards,26523,All
+S12000010,2016,Count,Cards,26382,All
+S12000010,2015,Count,Cards,24080,60 years and over
+S12000010,2018,Count,Cards,25874,60 years and over
+S12000010,2013,Count,Cards,23224,60 years and over
+S12000010,2020,Count,Cards,27278,60 years and over
+S12000010,2007,Count,Cards,21121,All
+S12000010,2006,Count,Cards,19557,All
+S12000010,2017,Count,Cards,27512,All
+S12000010,2019,Count,Cards,29704,All
+S12000010,2011,Count,Cards,21381,60 years and over
+S12000010,2020,Count,Cards,29721,All
+S12000010,2010,Count,Cards,20846,60 years and over
+S12000010,2006,Count,Cards,16860,60 years and over
+S12000010,2014,Count,Cards,26010,All
+S12000010,2013,Count,Cards,25244,All
+S12000010,2018,Count,Cards,28517,All
+S12000010,2016,Count,Cards,23936,60 years and over
+S12000010,2011,Count,Cards,23271,All
+S12000010,2010,Count,Cards,22664,All
+S12000010,2012,Count,Cards,24083,All
+S12000011,2015,Count,Cards,23010,All
+S12000011,2019,Count,Cards,25185,All
+S12000011,2018,Count,Cards,22173,60 years and over
+S12000011,2019,Count,Cards,23220,60 years and over
+S12000011,2018,Count,Cards,24091,All
+S12000011,2007,Count,Cards,17963,All
+S12000011,2011,Count,Cards,21960,All
+S12000011,2010,Count,Cards,21552,All
+S12000011,2017,Count,Cards,23080,All
+S12000011,2020,Count,Cards,25165,All
+S12000011,2006,Count,Cards,16554,All
+S12000011,2016,Count,Cards,22362,All
+S12000011,2015,Count,Cards,21174,60 years and over
+S12000011,2014,Count,Cards,20576,60 years and over
+S12000011,2013,Count,Cards,21968,All
+S12000011,2012,Count,Cards,22457,All
+S12000011,2014,Count,Cards,22343,All
+S12000011,2012,Count,Cards,19415,60 years and over
+S12000011,2016,Count,Cards,20517,60 years and over
+S12000011,2010,Count,Cards,18753,60 years and over
+S12000011,2007,Count,Cards,16356,60 years and over
+S12000011,2020,Count,Cards,23420,60 years and over
+S12000011,2017,Count,Cards,21203,60 years and over
+S12000011,2013,Count,Cards,20442,60 years and over
+S12000011,2006,Count,Cards,15053,60 years and over
+S12000011,2011,Count,Cards,19032,60 years and over
+S12000013,2016,Count,Cards,8093,All
+S12000013,2011,Count,Cards,7642,All
+S12000013,2007,Count,Cards,6407,All
+S12000013,2006,Count,Cards,5715,All
+S12000013,2010,Count,Cards,7475,All
+S12000013,2013,Count,Cards,7671,60 years and over
+S12000013,2014,Count,Cards,7778,60 years and over
+S12000013,2018,Count,Cards,7980,60 years and over
+S12000013,2013,Count,Cards,7966,All
+S12000013,2012,Count,Cards,7839,All
+S12000013,2014,Count,Cards,8131,All
+S12000013,2006,Count,Cards,5410,60 years and over
+S12000013,2017,Count,Cards,8185,All
+S12000013,2020,Count,Cards,8154,60 years and over
+S12000013,2010,Count,Cards,7053,60 years and over
+S12000013,2007,Count,Cards,6059,60 years and over
+S12000013,2017,Count,Cards,7804,60 years and over
+S12000013,2020,Count,Cards,8483,All
+S12000013,2015,Count,Cards,7948,60 years and over
+S12000013,2018,Count,Cards,8390,All
+S12000013,2011,Count,Cards,7211,60 years and over
+S12000013,2019,Count,Cards,8115,60 years and over
+S12000013,2012,Count,Cards,7395,60 years and over
+S12000013,2016,Count,Cards,7724,60 years and over
+S12000013,2019,Count,Cards,8522,All
+S12000013,2015,Count,Cards,8334,All
+S12000014,2012,Count,Cards,30876,60 years and over
+S12000014,2019,Count,Cards,34588,60 years and over
+S12000014,2018,Count,Cards,37957,All
+S12000014,2015,Count,Cards,32930,60 years and over
+S12000014,2016,Count,Cards,36796,All
+S12000014,2017,Count,Cards,32173,60 years and over
+S12000014,2006,Count,Cards,24955,60 years and over
+S12000014,2011,Count,Cards,30113,60 years and over
+S12000014,2017,Count,Cards,36595,All
+S12000014,2020,Count,Cards,38853,All
+S12000014,2019,Count,Cards,39403,All
+S12000014,2018,Count,Cards,33365,60 years and over
+S12000014,2007,Count,Cards,26696,60 years and over
+S12000014,2020,Count,Cards,34864,60 years and over
+S12000014,2016,Count,Cards,32507,60 years and over
+S12000014,2010,Count,Cards,29752,60 years and over
+S12000014,2011,Count,Cards,34926,All
+S12000014,2012,Count,Cards,35962,All
+S12000014,2007,Count,Cards,30181,All
+S12000014,2010,Count,Cards,34266,All
+S12000014,2014,Count,Cards,32504,60 years and over
+S12000014,2014,Count,Cards,36527,All
+S12000014,2013,Count,Cards,35640,All
+S12000014,2013,Count,Cards,32287,60 years and over
+S12000014,2006,Count,Cards,28121,All
+S12000014,2015,Count,Cards,37236,All
+S12000017,2020,Count,Cards,61307,60 years and over
+S12000017,2014,Count,Cards,54557,60 years and over
+S12000017,2007,Count,Cards,44460,All
+S12000017,2007,Count,Cards,39485,60 years and over
+S12000017,2018,Count,Cards,58779,60 years and over
+S12000017,2013,Count,Cards,53980,60 years and over
+S12000017,2019,Count,Cards,66443,All
+S12000017,2017,Count,Cards,56583,60 years and over
+S12000017,2011,Count,Cards,54792,All
+S12000017,2006,Count,Cards,34718,60 years and over
+S12000017,2017,Count,Cards,61973,All
+S12000017,2016,Count,Cards,54419,60 years and over
+S12000017,2006,Count,Cards,39062,All
+S12000017,2010,Count,Cards,46733,60 years and over
+S12000017,2011,Count,Cards,48828,60 years and over
+S12000017,2019,Count,Cards,60742,60 years and over
+S12000017,2020,Count,Cards,66151,All
+S12000017,2013,Count,Cards,58101,All
+S12000017,2015,Count,Cards,56032,60 years and over
+S12000017,2014,Count,Cards,59307,All
+S12000017,2012,Count,Cards,57030,All
+S12000017,2015,Count,Cards,61053,All
+S12000017,2012,Count,Cards,50802,60 years and over
+S12000017,2010,Count,Cards,52426,All
+S12000017,2018,Count,Cards,64276,All
+S12000017,2016,Count,Cards,59642,All
+S12000018,2019,Count,Cards,23845,All
+S12000018,2020,Count,Cards,20571,60 years and over
+S12000018,2020,Count,Cards,24056,All
+S12000018,2011,Count,Cards,17242,60 years and over
+S12000018,2013,Count,Cards,18401,60 years and over
+S12000018,2019,Count,Cards,19907,60 years and over
+S12000018,2018,Count,Cards,22811,All
+S12000018,2015,Count,Cards,18729,60 years and over
+S12000018,2017,Count,Cards,18120,60 years and over
+S12000018,2012,Count,Cards,17462,60 years and over
+S12000018,2006,Count,Cards,14368,60 years and over
+S12000018,2018,Count,Cards,18919,60 years and over
+S12000018,2016,Count,Cards,18127,60 years and over
+S12000018,2014,Count,Cards,18359,60 years and over
+S12000018,2007,Count,Cards,15580,60 years and over
+S12000018,2010,Count,Cards,16962,60 years and over
+S12000018,2014,Count,Cards,21860,All
+S12000018,2017,Count,Cards,21994,All
+S12000018,2013,Count,Cards,21513,All
+S12000018,2015,Count,Cards,22497,All
+S12000018,2016,Count,Cards,21932,All
+S12000018,2010,Count,Cards,20849,All
+S12000018,2011,Count,Cards,21196,All
+S12000018,2007,Count,Cards,19180,All
+S12000018,2012,Count,Cards,21588,All
+S12000018,2006,Count,Cards,17670,All
+S12000019,2016,Count,Cards,19558,60 years and over
+S12000019,2018,Count,Cards,20574,60 years and over
+S12000019,2010,Count,Cards,16968,60 years and over
+S12000019,2020,Count,Cards,22372,60 years and over
+S12000019,2017,Count,Cards,19770,60 years and over
+S12000019,2018,Count,Cards,23485,All
+S12000019,2015,Count,Cards,19414,60 years and over
+S12000019,2017,Count,Cards,22615,All
+S12000019,2014,Count,Cards,19056,60 years and over
+S12000019,2015,Count,Cards,22045,All
+S12000019,2016,Count,Cards,22304,All
+S12000019,2011,Count,Cards,20542,All
+S12000019,2010,Count,Cards,19783,All
+S12000019,2013,Count,Cards,21251,All
+S12000019,2012,Count,Cards,21154,All
+S12000019,2006,Count,Cards,16257,All
+S12000019,2019,Count,Cards,21624,60 years and over
+S12000019,2007,Count,Cards,17715,All
+S12000019,2007,Count,Cards,15043,60 years and over
+S12000019,2013,Count,Cards,19136,60 years and over
+S12000019,2011,Count,Cards,17640,60 years and over
+S12000019,2006,Count,Cards,13730,60 years and over
+S12000019,2019,Count,Cards,24695,All
+S12000019,2014,Count,Cards,21560,All
+S12000019,2012,Count,Cards,18132,60 years and over
+S12000019,2020,Count,Cards,25053,All
+S12000020,2011,Count,Cards,21491,All
+S12000020,2012,Count,Cards,22088,All
+S12000020,2010,Count,Cards,20781,All
+S12000020,2014,Count,Cards,22762,All
+S12000020,2013,Count,Cards,24099,All
+S12000020,2010,Count,Cards,18706,60 years and over
+S12000020,2006,Count,Cards,16395,All
+S12000020,2015,Count,Cards,23194,All
+S12000020,2011,Count,Cards,19396,60 years and over
+S12000020,2007,Count,Cards,18292,All
+S12000020,2015,Count,Cards,21415,60 years and over
+S12000020,2016,Count,Cards,23036,All
+S12000020,2013,Count,Cards,22727,60 years and over
+S12000020,2018,Count,Cards,22685,60 years and over
+S12000020,2016,Count,Cards,21123,60 years and over
+S12000020,2019,Count,Cards,25534,All
+S12000020,2017,Count,Cards,21845,60 years and over
+S12000020,2018,Count,Cards,24710,All
+S12000020,2020,Count,Cards,23653,60 years and over
+S12000020,2014,Count,Cards,21095,60 years and over
+S12000020,2020,Count,Cards,25499,All
+S12000020,2019,Count,Cards,23391,60 years and over
+S12000020,2017,Count,Cards,23810,All
+S12000020,2006,Count,Cards,14720,60 years and over
+S12000020,2007,Count,Cards,16393,60 years and over
+S12000020,2012,Count,Cards,19923,60 years and over
+S12000021,2020,Count,Cards,43277,All
+S12000021,2006,Count,Cards,29648,All
+S12000021,2018,Count,Cards,40881,All
+S12000021,2014,Count,Cards,34020,60 years and over
+S12000021,2017,Count,Cards,34087,60 years and over
+S12000021,2013,Count,Cards,34107,60 years and over
+S12000021,2014,Count,Cards,38832,All
+S12000021,2012,Count,Cards,37957,All
+S12000021,2020,Count,Cards,38579,60 years and over
+S12000021,2011,Count,Cards,37088,All
+S12000021,2013,Count,Cards,38536,All
+S12000021,2007,Count,Cards,32436,All
+S12000021,2010,Count,Cards,36324,All
+S12000021,2019,Count,Cards,37475,60 years and over
+S12000021,2017,Count,Cards,39175,All
+S12000021,2007,Count,Cards,27450,60 years and over
+S12000021,2012,Count,Cards,32020,60 years and over
+S12000021,2015,Count,Cards,39769,All
+S12000021,2011,Count,Cards,31370,60 years and over
+S12000021,2018,Count,Cards,35673,60 years and over
+S12000021,2015,Count,Cards,34821,60 years and over
+S12000021,2016,Count,Cards,38596,All
+S12000021,2016,Count,Cards,33606,60 years and over
+S12000021,2019,Count,Cards,42723,All
+S12000021,2010,Count,Cards,30711,60 years and over
+S12000021,2006,Count,Cards,24974,60 years and over
+S12000023,2013,Count,Cards,5412,60 years and over
+S12000023,2018,Count,Cards,6022,60 years and over
+S12000023,2014,Count,Cards,6069,All
+S12000023,2016,Count,Cards,6283,All
+S12000023,2012,Count,Cards,5248,60 years and over
+S12000023,2012,Count,Cards,5851,All
+S12000023,2007,Count,Cards,4511,All
+S12000023,2010,Count,Cards,5457,All
+S12000023,2011,Count,Cards,5731,All
+S12000023,2017,Count,Cards,6569,All
+S12000023,2015,Count,Cards,6191,All
+S12000023,2014,Count,Cards,5546,60 years and over
+S12000023,2013,Count,Cards,5881,All
+S12000023,2020,Count,Cards,6174,60 years and over
+S12000023,2017,Count,Cards,5890,60 years and over
+S12000023,2006,Count,Cards,4029,All
+S12000023,2020,Count,Cards,6803,All
+S12000023,2019,Count,Cards,6177,60 years and over
+S12000023,2011,Count,Cards,5157,60 years and over
+S12000023,2019,Count,Cards,6884,All
+S12000023,2010,Count,Cards,4921,60 years and over
+S12000023,2016,Count,Cards,5692,60 years and over
+S12000023,2018,Count,Cards,6719,All
+S12000023,2007,Count,Cards,4117,60 years and over
+S12000023,2015,Count,Cards,5635,60 years and over
+S12000023,2006,Count,Cards,3709,60 years and over
+S12000026,2010,Count,Cards,25969,60 years and over
+S12000026,2017,Count,Cards,32233,All
+S12000026,2019,Count,Cards,34178,All
+S12000026,2020,Count,Cards,33878,All
+S12000026,2017,Count,Cards,29728,60 years and over
+S12000026,2006,Count,Cards,20286,60 years and over
+S12000026,2019,Count,Cards,31535,60 years and over
+S12000026,2014,Count,Cards,29470,60 years and over
+S12000026,2007,Count,Cards,22430,60 years and over
+S12000026,2015,Count,Cards,32306,All
+S12000026,2011,Count,Cards,27057,60 years and over
+S12000026,2020,Count,Cards,31583,60 years and over
+S12000026,2012,Count,Cards,28046,60 years and over
+S12000026,2010,Count,Cards,28671,All
+S12000026,2014,Count,Cards,31669,All
+S12000026,2018,Count,Cards,30622,60 years and over
+S12000026,2013,Count,Cards,29757,60 years and over
+S12000026,2012,Count,Cards,31024,All
+S12000026,2011,Count,Cards,29842,All
+S12000026,2013,Count,Cards,31675,All
+S12000026,2015,Count,Cards,30027,60 years and over
+S12000026,2016,Count,Cards,31120,All
+S12000026,2018,Count,Cards,33098,All
+S12000026,2006,Count,Cards,22583,All
+S12000026,2007,Count,Cards,24939,All
+S12000026,2016,Count,Cards,28777,60 years and over
+S12000027,2006,Count,Cards,3695,60 years and over
+S12000027,2007,Count,Cards,4109,60 years and over
+S12000027,2018,Count,Cards,5725,60 years and over
+S12000027,2014,Count,Cards,5460,60 years and over
+S12000027,2017,Count,Cards,6113,All
+S12000027,2013,Count,Cards,5409,60 years and over
+S12000027,2013,Count,Cards,5779,All
+S12000027,2012,Count,Cards,5740,All
+S12000027,2014,Count,Cards,5916,All
+S12000027,2011,Count,Cards,5501,All
+S12000027,2011,Count,Cards,4974,60 years and over
+S12000027,2010,Count,Cards,5327,All
+S12000027,2010,Count,Cards,4823,60 years and over
+S12000027,2006,Count,Cards,3979,All
+S12000027,2016,Count,Cards,5547,60 years and over
+S12000027,2017,Count,Cards,5530,60 years and over
+S12000027,2007,Count,Cards,4472,All
+S12000027,2018,Count,Cards,6374,All
+S12000027,2016,Count,Cards,6117,All
+S12000027,2019,Count,Cards,6558,All
+S12000027,2020,Count,Cards,6522,All
+S12000027,2019,Count,Cards,5839,60 years and over
+S12000027,2015,Count,Cards,6069,All
+S12000027,2012,Count,Cards,5182,60 years and over
+S12000027,2015,Count,Cards,5570,60 years and over
+S12000027,2020,Count,Cards,5881,60 years and over
+S12000028,2007,Count,Cards,28304,All
+S12000028,2010,Count,Cards,31549,All
+S12000028,2006,Count,Cards,25805,All
+S12000028,2013,Count,Cards,33555,All
+S12000028,2014,Count,Cards,34027,All
+S12000028,2011,Count,Cards,32227,All
+S12000028,2012,Count,Cards,33089,All
+S12000028,2017,Count,Cards,34681,All
+S12000028,2015,Count,Cards,31268,60 years and over
+S12000028,2013,Count,Cards,30310,60 years and over
+S12000028,2018,Count,Cards,32275,60 years and over
+S12000028,2016,Count,Cards,34054,All
+S12000028,2011,Count,Cards,27904,60 years and over
+S12000028,2019,Count,Cards,37663,All
+S12000028,2016,Count,Cards,30378,60 years and over
+S12000028,2018,Count,Cards,36005,All
+S12000028,2010,Count,Cards,27373,60 years and over
+S12000028,2019,Count,Cards,33845,60 years and over
+S12000028,2007,Count,Cards,24588,60 years and over
+S12000028,2006,Count,Cards,22406,60 years and over
+S12000028,2020,Count,Cards,34745,60 years and over
+S12000028,2020,Count,Cards,38135,All
+S12000028,2014,Count,Cards,30451,60 years and over
+S12000028,2012,Count,Cards,28601,60 years and over
+S12000028,2015,Count,Cards,35002,All
+S12000028,2017,Count,Cards,30978,60 years and over
+S12000029,2016,Count,Cards,77215,All
+S12000029,2016,Count,Cards,67418,60 years and over
+S12000029,2013,Count,Cards,66222,60 years and over
+S12000029,2015,Count,Cards,68643,60 years and over
+S12000029,2018,Count,Cards,71469,60 years and over
+S12000029,2006,Count,Cards,47955,60 years and over
+S12000029,2019,Count,Cards,75455,60 years and over
+S12000029,2012,Count,Cards,73527,All
+S12000029,2011,Count,Cards,71734,All
+S12000029,2014,Count,Cards,75768,All
+S12000029,2013,Count,Cards,74523,All
+S12000029,2006,Count,Cards,57048,All
+S12000029,2007,Count,Cards,62605,All
+S12000029,2010,Count,Cards,69866,All
+S12000029,2018,Count,Cards,81360,All
+S12000029,2007,Count,Cards,52894,60 years and over
+S12000029,2019,Count,Cards,85514,All
+S12000029,2010,Count,Cards,59228,60 years and over
+S12000029,2017,Count,Cards,77874,All
+S12000029,2020,Count,Cards,86698,All
+S12000029,2014,Count,Cards,66513,60 years and over
+S12000029,2017,Count,Cards,68058,60 years and over
+S12000029,2011,Count,Cards,60832,60 years and over
+S12000029,2012,Count,Cards,62372,60 years and over
+S12000029,2015,Count,Cards,78361,All
+S12000029,2020,Count,Cards,77741,60 years and over
+S12000030,2017,Count,Cards,18642,60 years and over
+S12000030,2015,Count,Cards,20607,All
+S12000030,2016,Count,Cards,18676,60 years and over
+S12000030,2006,Count,Cards,13720,60 years and over
+S12000030,2018,Count,Cards,19371,60 years and over
+S12000030,2017,Count,Cards,20711,All
+S12000030,2020,Count,Cards,20599,60 years and over
+S12000030,2015,Count,Cards,18614,60 years and over
+S12000030,2018,Count,Cards,21488,All
+S12000030,2014,Count,Cards,18467,60 years and over
+S12000030,2014,Count,Cards,20361,All
+S12000030,2011,Count,Cards,19510,All
+S12000030,2012,Count,Cards,20106,All
+S12000030,2010,Count,Cards,18921,All
+S12000030,2007,Count,Cards,14986,60 years and over
+S12000030,2013,Count,Cards,20039,All
+S12000030,2006,Count,Cards,15217,All
+S12000030,2010,Count,Cards,16863,60 years and over
+S12000030,2012,Count,Cards,17802,60 years and over
+S12000030,2007,Count,Cards,16693,All
+S12000030,2020,Count,Cards,22421,All
+S12000030,2013,Count,Cards,18386,60 years and over
+S12000030,2019,Count,Cards,22354,All
+S12000030,2011,Count,Cards,17357,60 years and over
+S12000030,2019,Count,Cards,20223,60 years and over
+S12000030,2016,Count,Cards,20673,All
+S12000033,2019,Count,Cards,52134,All
+S12000033,2012,Count,Cards,41588,60 years and over
+S12000033,2006,Count,Cards,33213,60 years and over
+S12000033,2016,Count,Cards,44091,60 years and over
+S12000033,2016,Count,Cards,50112,All
+S12000033,2018,Count,Cards,43924,60 years and over
+S12000033,2015,Count,Cards,51962,All
+S12000033,2006,Count,Cards,38231,All
+S12000033,2015,Count,Cards,46037,60 years and over
+S12000033,2013,Count,Cards,43396,60 years and over
+S12000033,2007,Count,Cards,50147,60 years and over
+S12000033,2017,Count,Cards,48554,All
+S12000033,2010,Count,Cards,41457,60 years and over
+S12000033,2019,Count,Cards,45556,60 years and over
+S12000033,2020,Count,Cards,46157,60 years and over
+S12000033,2011,Count,Cards,41401,60 years and over
+S12000033,2012,Count,Cards,49030,All
+S12000033,2017,Count,Cards,42322,60 years and over
+S12000033,2007,Count,Cards,61124,All
+S12000033,2020,Count,Cards,51829,All
+S12000033,2014,Count,Cards,49799,All
+S12000033,2010,Count,Cards,47918,All
+S12000033,2013,Count,Cards,48205,All
+S12000033,2014,Count,Cards,44407,60 years and over
+S12000033,2011,Count,Cards,48383,All
+S12000033,2018,Count,Cards,50382,All
+S12000034,2014,Count,Cards,57349,All
+S12000034,2012,Count,Cards,54742,All
+S12000034,2011,Count,Cards,47938,60 years and over
+S12000034,2017,Count,Cards,60528,All
+S12000034,2006,Count,Cards,37842,All
+S12000034,2012,Count,Cards,49859,60 years and over
+S12000034,2019,Count,Cards,59725,60 years and over
+S12000034,2013,Count,Cards,55576,60 years and over
+S12000034,2013,Count,Cards,58872,All
+S12000034,2010,Count,Cards,45595,60 years and over
+S12000034,2018,Count,Cards,62668,All
+S12000034,2010,Count,Cards,50080,All
+S12000034,2016,Count,Cards,55130,60 years and over
+S12000034,2019,Count,Cards,64725,All
+S12000034,2017,Count,Cards,55931,60 years and over
+S12000034,2015,Count,Cards,58898,All
+S12000034,2006,Count,Cards,34459,60 years and over
+S12000034,2020,Count,Cards,64479,All
+S12000034,2014,Count,Cards,53430,60 years and over
+S12000034,2020,Count,Cards,59999,60 years and over
+S12000034,2016,Count,Cards,59460,All
+S12000034,2011,Count,Cards,52596,All
+S12000034,2007,Count,Cards,38811,60 years and over
+S12000034,2015,Count,Cards,54773,60 years and over
+S12000034,2018,Count,Cards,57926,60 years and over
+S12000034,2007,Count,Cards,42631,All
+S12000035,2020,Count,Cards,30542,All
+S12000035,2006,Count,Cards,19460,All
+S12000035,2017,Count,Cards,27370,All
+S12000035,2007,Count,Cards,21809,All
+S12000035,2007,Count,Cards,19521,60 years and over
+S12000035,2006,Count,Cards,17403,60 years and over
+S12000035,2014,Count,Cards,25018,60 years and over
+S12000035,2019,Count,Cards,27644,60 years and over
+S12000035,2010,Count,Cards,22541,60 years and over
+S12000035,2018,Count,Cards,28677,All
+S12000035,2016,Count,Cards,25195,60 years and over
+S12000035,2012,Count,Cards,23567,60 years and over
+S12000035,2019,Count,Cards,30046,All
+S12000035,2018,Count,Cards,26272,60 years and over
+S12000035,2017,Count,Cards,24979,60 years and over
+S12000035,2011,Count,Cards,23003,60 years and over
+S12000035,2016,Count,Cards,27562,All
+S12000035,2015,Count,Cards,27971,All
+S12000035,2013,Count,Cards,24993,60 years and over
+S12000035,2013,Count,Cards,27132,All
+S12000035,2012,Count,Cards,26414,All
+S12000035,2014,Count,Cards,27342,All
+S12000035,2010,Count,Cards,25220,All
+S12000035,2011,Count,Cards,25775,All
+S12000035,2020,Count,Cards,28401,60 years and over
+S12000035,2015,Count,Cards,25578,60 years and over
+S12000036,2016,Count,Cards,112255,All
+S12000036,2006,Count,Cards,71870,60 years and over
+S12000036,2015,Count,Cards,114567,All
+S12000036,2019,Count,Cards,127575,All
+S12000036,2019,Count,Cards,111176,60 years and over
+S12000036,2015,Count,Cards,100394,60 years and over
+S12000036,2018,Count,Cards,120708,All
+S12000036,2013,Count,Cards,97148,60 years and over
+S12000036,2018,Count,Cards,105280,60 years and over
+S12000036,2010,Count,Cards,86689,60 years and over
+S12000036,2007,Count,Cards,78002,60 years and over
+S12000036,2014,Count,Cards,110752,All
+S12000036,2017,Count,Cards,115228,All
+S12000036,2007,Count,Cards,92470,All
+S12000036,2011,Count,Cards,105142,All
+S12000036,2010,Count,Cards,102644,All
+S12000036,2013,Count,Cards,108514,All
+S12000036,2012,Count,Cards,107679,All
+S12000036,2020,Count,Cards,129074,All
+S12000036,2016,Count,Cards,97893,60 years and over
+S12000036,2017,Count,Cards,100253,60 years and over
+S12000036,2014,Count,Cards,97415,60 years and over
+S12000036,2006,Count,Cards,85360,All
+S12000036,2012,Count,Cards,91005,60 years and over
+S12000036,2011,Count,Cards,88723,60 years and over
+S12000036,2020,Count,Cards,114616,60 years and over
+S12000038,2019,Count,Cards,41696,60 years and over
+S12000038,2017,Count,Cards,43979,All
+S12000038,2007,Count,Cards,31701,60 years and over
+S12000038,2011,Count,Cards,35044,60 years and over
+S12000038,2012,Count,Cards,35655,60 years and over
+S12000038,2019,Count,Cards,48052,All
+S12000038,2013,Count,Cards,37990,60 years and over
+S12000038,2016,Count,Cards,37247,60 years and over
+S12000038,2014,Count,Cards,43532,All
+S12000038,2018,Count,Cards,39667,60 years and over
+S12000038,2015,Count,Cards,38667,60 years and over
+S12000038,2011,Count,Cards,41815,All
+S12000038,2010,Count,Cards,41113,All
+S12000038,2013,Count,Cards,43103,All
+S12000038,2012,Count,Cards,42539,All
+S12000038,2016,Count,Cards,43278,All
+S12000038,2018,Count,Cards,45936,All
+S12000038,2020,Count,Cards,43063,60 years and over
+S12000038,2020,Count,Cards,48702,All
+S12000038,2014,Count,Cards,37889,60 years and over
+S12000038,2017,Count,Cards,37850,60 years and over
+S12000038,2015,Count,Cards,44550,All
+S12000038,2007,Count,Cards,37711,All
+S12000038,2006,Count,Cards,29213,60 years and over
+S12000038,2010,Count,Cards,34471,60 years and over
+S12000038,2006,Count,Cards,34880,All
+S12000041,2011,Count,Cards,26488,60 years and over
+S12000041,2017,Count,Cards,28907,60 years and over
+S12000041,2010,Count,Cards,25686,60 years and over
+S12000041,2020,Count,Cards,34578,All
+S12000041,2012,Count,Cards,27069,60 years and over
+S12000041,2013,Count,Cards,28798,60 years and over
+S12000041,2014,Count,Cards,31516,All
+S12000041,2018,Count,Cards,29925,60 years and over
+S12000041,2015,Count,Cards,30214,60 years and over
+S12000041,2016,Count,Cards,31952,All
+S12000041,2020,Count,Cards,31889,60 years and over
+S12000041,2006,Count,Cards,20356,60 years and over
+S12000041,2017,Count,Cards,31695,All
+S12000041,2019,Count,Cards,31141,60 years and over
+S12000041,2015,Count,Cards,32681,All
+S12000041,2014,Count,Cards,29311,60 years and over
+S12000041,2018,Count,Cards,32871,All
+S12000041,2019,Count,Cards,34263,All
+S12000041,2006,Count,Cards,21688,All
+S12000041,2011,Count,Cards,28820,All
+S12000041,2012,Count,Cards,29551,All
+S12000041,2016,Count,Cards,29353,60 years and over
+S12000041,2010,Count,Cards,27836,All
+S12000041,2013,Count,Cards,30569,All
+S12000041,2007,Count,Cards,24216,All
+S12000041,2007,Count,Cards,22620,60 years and over
+S12000042,2017,Count,Cards,37422,All
+S12000042,2015,Count,Cards,31461,60 years and over
+S12000042,2013,Count,Cards,31491,60 years and over
+S12000042,2019,Count,Cards,39489,All
+S12000042,2010,Count,Cards,30305,60 years and over
+S12000042,2015,Count,Cards,37144,All
+S12000042,2020,Count,Cards,38869,All
+S12000042,2011,Count,Cards,30118,60 years and over
+S12000042,2018,Count,Cards,31749,60 years and over
+S12000042,2020,Count,Cards,32771,60 years and over
+S12000042,2019,Count,Cards,32591,60 years and over
+S12000042,2014,Count,Cards,31435,60 years and over
+S12000042,2017,Count,Cards,31064,60 years and over
+S12000042,2018,Count,Cards,38225,All
+S12000042,2007,Count,Cards,33330,All
+S12000042,2016,Count,Cards,30500,60 years and over
+S12000042,2011,Count,Cards,35303,All
+S12000042,2010,Count,Cards,35365,All
+S12000042,2006,Count,Cards,30700,All
+S12000042,2012,Count,Cards,30387,60 years and over
+S12000042,2016,Count,Cards,36663,All
+S12000042,2006,Count,Cards,27252,60 years and over
+S12000042,2013,Count,Cards,35740,All
+S12000042,2007,Count,Cards,29314,60 years and over
+S12000042,2014,Count,Cards,36481,All
+S12000042,2012,Count,Cards,35867,All
+S12000045,2018,Count,Cards,30859,All
+S12000045,2016,Count,Cards,27257,60 years and over
+S12000045,2020,Count,Cards,32856,All
+S12000045,2020,Count,Cards,30874,60 years and over
+S12000045,2015,Count,Cards,29571,All
+S12000045,2007,Count,Cards,20916,60 years and over
+S12000045,2017,Count,Cards,27406,60 years and over
+S12000045,2010,Count,Cards,24076,60 years and over
+S12000045,2019,Count,Cards,32259,All
+S12000045,2006,Count,Cards,19067,60 years and over
+S12000045,2016,Count,Cards,29377,All
+S12000045,2014,Count,Cards,26620,60 years and over
+S12000045,2011,Count,Cards,24599,60 years and over
+S12000045,2012,Count,Cards,27424,All
+S12000045,2010,Count,Cards,26209,All
+S12000045,2013,Count,Cards,28119,All
+S12000045,2018,Count,Cards,28647,60 years and over
+S12000045,2015,Count,Cards,27470,60 years and over
+S12000045,2011,Count,Cards,26780,All
+S12000045,2019,Count,Cards,30029,60 years and over
+S12000045,2014,Count,Cards,28637,All
+S12000045,2012,Count,Cards,25110,60 years and over
+S12000045,2017,Count,Cards,29563,All
+S12000045,2007,Count,Cards,22731,All
+S12000045,2013,Count,Cards,26329,60 years and over
+S12000045,2006,Count,Cards,20727,All
+S08000015,2014,Count,Cards,104256,All
+S08000015,2013,Count,Cards,91655,60 years and over
+S08000015,2014,Count,Cards,91644,60 years and over
+S08000015,2012,Count,Cards,101750,All
+S08000015,2012,Count,Cards,86242,60 years and over
+S08000015,2013,Count,Cards,103104,All
+S08000016,2014,Count,Cards,31669,All
+S08000016,2013,Count,Cards,31675,All
+S08000016,2012,Count,Cards,31024,All
+S08000016,2014,Count,Cards,29470,60 years and over
+S08000016,2013,Count,Cards,29757,60 years and over
+S08000016,2012,Count,Cards,28046,60 years and over
+S08000017,2014,Count,Cards,37884,60 years and over
+S08000017,2012,Count,Cards,36094,60 years and over
+S08000017,2013,Count,Cards,39979,All
+S08000017,2013,Count,Cards,37331,60 years and over
+S08000017,2014,Count,Cards,40929,All
+S08000017,2012,Count,Cards,40050,All
+S08000019,2013,Count,Cards,67405,All
+S08000019,2014,Count,Cards,68939,All
+S08000019,2012,Count,Cards,67992,All
+S08000019,2014,Count,Cards,61768,60 years and over
+S08000019,2013,Count,Cards,61253,60 years and over
+S08000019,2012,Count,Cards,59051,60 years and over
+S08000020,2012,Count,Cards,125860,All
+S08000020,2012,Count,Cards,111370,60 years and over
+S08000020,2013,Count,Cards,131176,All
+S08000020,2014,Count,Cards,129910,All
+S08000020,2013,Count,Cards,121699,60 years and over
+S08000020,2014,Count,Cards,118932,60 years and over
+S08000022,2013,Count,Cards,85233,All
+S08000022,2014,Count,Cards,79575,60 years and over
+S08000022,2013,Count,Cards,78973,60 years and over
+S08000022,2012,Count,Cards,74369,60 years and over
+S08000022,2012,Count,Cards,83444,All
+S08000022,2014,Count,Cards,86649,All
+S08000024,2012,Count,Cards,189085,All
+S08000024,2013,Count,Cards,171768,60 years and over
+S08000024,2013,Count,Cards,191154,All
+S08000024,2012,Count,Cards,161743,60 years and over
+S08000024,2014,Count,Cards,195932,All
+S08000024,2014,Count,Cards,173225,60 years and over
+S08000025,2014,Count,Cards,5546,60 years and over
+S08000025,2014,Count,Cards,6069,All
+S08000025,2012,Count,Cards,5248,60 years and over
+S08000025,2013,Count,Cards,5881,All
+S08000025,2012,Count,Cards,5851,All
+S08000025,2013,Count,Cards,5412,60 years and over
+S08000026,2014,Count,Cards,5916,All
+S08000026,2012,Count,Cards,5740,All
+S08000026,2014,Count,Cards,5460,60 years and over
+S08000026,2013,Count,Cards,5779,All
+S08000026,2013,Count,Cards,5409,60 years and over
+S08000026,2012,Count,Cards,5182,60 years and over
+S08000028,2012,Count,Cards,7839,All
+S08000028,2013,Count,Cards,7966,All
+S08000028,2012,Count,Cards,7395,60 years and over
+S08000028,2013,Count,Cards,7671,60 years and over
+S08000028,2014,Count,Cards,7778,60 years and over
+S08000028,2014,Count,Cards,8131,All
+S12000047,2017,Count,Cards,100652,All
+S12000047,2006,Count,Cards,59949,60 years and over
+S12000047,2007,Count,Cards,81925,All
+S12000047,2020,Count,Cards,92435,60 years and over
+S12000047,2011,Count,Cards,92915,All
+S12000047,2010,Count,Cards,90761,All
+S12000047,2012,Count,Cards,95055,All
+S12000047,2019,Count,Cards,91574,60 years and over
+S12000047,2015,Count,Cards,85762,60 years and over
+S12000047,2016,Count,Cards,84011,60 years and over
+S12000047,2012,Count,Cards,78507,60 years and over
+S12000047,2007,Count,Cards,65342,60 years and over
+S12000047,2006,Count,Cards,76014,All
+S12000047,2013,Count,Cards,82738,60 years and over
+S12000047,2014,Count,Cards,84102,60 years and over
+S12000047,2010,Count,Cards,74058,60 years and over
+S12000047,2020,Count,Cards,106031,All
+S12000047,2017,Count,Cards,86640,60 years and over
+S12000047,2018,Count,Cards,103168,All
+S12000047,2016,Count,Cards,97970,All
+S12000047,2019,Count,Cards,106139,All
+S12000047,2015,Count,Cards,99745,All
+S12000047,2014,Count,Cards,97615,All
+S12000047,2011,Count,Cards,76495,60 years and over
+S12000047,2013,Count,Cards,95287,All
+S12000047,2018,Count,Cards,89126,60 years and over
+S12000048,2020,Count,Cards,39319,60 years and over
+S12000048,2020,Count,Cards,42645,All
+S12000048,2019,Count,Cards,42986,All
+S12000048,2006,Count,Cards,24634,60 years and over
+S12000048,2010,Count,Cards,32097,60 years and over
+S12000048,2010,Count,Cards,34840,All
+S12000048,2016,Count,Cards,36775,60 years and over
+S12000048,2015,Count,Cards,37313,60 years and over
+S12000048,2007,Count,Cards,27727,60 years and over
+S12000048,2007,Count,Cards,29799,All
+S12000048,2011,Count,Cards,33395,60 years and over
+S12000048,2006,Count,Cards,26287,All
+S12000048,2012,Count,Cards,34268,60 years and over
+S12000048,2013,Count,Cards,36249,60 years and over
+S12000048,2013,Count,Cards,38601,All
+S12000048,2014,Count,Cards,39316,All
+S12000048,2012,Count,Cards,37443,All
+S12000048,2016,Count,Cards,40008,All
+S12000048,2017,Count,Cards,40003,All
+S12000048,2015,Count,Cards,40316,All
+S12000048,2017,Count,Cards,36591,60 years and over
+S12000048,2014,Count,Cards,36580,60 years and over
+S12000048,2018,Count,Cards,37873,60 years and over
+S12000048,2018,Count,Cards,41434,All
+S12000048,2011,Count,Cards,36315,All
+S12000048,2019,Count,Cards,39210,60 years and over
+S08000029,2013,Count,Cards,82738,60 years and over
+S08000029,2014,Count,Cards,84102,60 years and over
+S08000029,2012,Count,Cards,78507,60 years and over
+S08000029,2013,Count,Cards,95287,All
+S08000029,2012,Count,Cards,95055,All
+S08000029,2014,Count,Cards,97615,All
+S08000030,2014,Count,Cards,97326,60 years and over
+S08000030,2014,Count,Cards,107313,All
+S08000030,2013,Count,Cards,96538,60 years and over
+S08000030,2012,Count,Cards,102861,All
+S08000030,2013,Count,Cards,104910,All
+S08000030,2012,Count,Cards,91724,60 years and over
+S12000049,2015,Count,Cards,100716,60 years and over
+S12000049,2006,Count,Cards,81312,60 years and over
+S12000049,2011,Count,Cards,125206,All
+S12000049,2010,Count,Cards,123424,All
+S12000049,2010,Count,Cards,92732,60 years and over
+S12000049,2018,Count,Cards,132711,All
+S12000049,2018,Count,Cards,101549,60 years and over
+S12000049,2007,Count,Cards,115296,All
+S12000049,2006,Count,Cards,107167,All
+S12000049,2017,Count,Cards,127175,All
+S12000049,2016,Count,Cards,126628,All
+S12000049,2013,Count,Cards,126648,All
+S12000049,2014,Count,Cards,126606,All
+S12000049,2015,Count,Cards,130412,All
+S12000049,2019,Count,Cards,139796,All
+S12000049,2020,Count,Cards,112267,60 years and over
+S12000049,2019,Count,Cards,107898,60 years and over
+S12000049,2012,Count,Cards,127442,All
+S12000049,2020,Count,Cards,140481,All
+S12000049,2013,Count,Cards,100036,60 years and over
+S12000049,2014,Count,Cards,98617,60 years and over
+S12000049,2016,Count,Cards,96488,60 years and over
+S12000049,2011,Count,Cards,93155,60 years and over
+S12000049,2012,Count,Cards,94371,60 years and over
+S12000049,2007,Count,Cards,87773,60 years and over
+S12000049,2017,Count,Cards,96518,60 years and over
+S12000050,2007,Count,Cards,61671,All
+S12000050,2006,Count,Cards,56620,All
+S12000050,2010,Count,Cards,68413,All
+S12000050,2015,Count,Cards,75591,All
+S12000050,2014,Count,Cards,73315,All
+S12000050,2017,Count,Cards,74623,All
+S12000050,2016,Count,Cards,73635,All
+S12000050,2012,Count,Cards,71716,All
+S12000050,2011,Count,Cards,70016,All
+S12000050,2013,Count,Cards,72266,All
+S12000050,2016,Count,Cards,62508,60 years and over
+S12000050,2014,Count,Cards,62828,60 years and over
+S12000050,2020,Count,Cards,80921,All
+S12000050,2007,Count,Cards,50033,60 years and over
+S12000050,2012,Count,Cards,59005,60 years and over
+S12000050,2019,Count,Cards,81074,All
+S12000050,2017,Count,Cards,63350,60 years and over
+S12000050,2013,Count,Cards,62695,60 years and over
+S12000050,2019,Count,Cards,69617,60 years and over
+S12000050,2020,Count,Cards,70727,60 years and over
+S12000050,2010,Count,Cards,56338,60 years and over
+S12000050,2006,Count,Cards,45325,60 years and over
+S12000050,2011,Count,Cards,57599,60 years and over
+S12000050,2018,Count,Cards,77645,All
+S12000050,2015,Count,Cards,64600,60 years and over
+S12000050,2018,Count,Cards,66345,60 years and over
+S08000021,2014,Count,Cards,265340,All
+S08000021,2012,Count,Cards,209854,60 years and over
+S08000021,2013,Count,Cards,222093,60 years and over
+S08000021,2014,Count,Cards,220872,60 years and over
+S08000021,2012,Count,Cards,263560,All
+S08000021,2013,Count,Cards,263475,All
+S08000023,2012,Count,Cards,121377,60 years and over
+S08000023,2013,Count,Cards,128917,60 years and over
+S08000023,2013,Count,Cards,146789,All
+S08000023,2012,Count,Cards,145243,All
+S08000023,2014,Count,Cards,129341,60 years and over
+S08000023,2014,Count,Cards,149083,All
