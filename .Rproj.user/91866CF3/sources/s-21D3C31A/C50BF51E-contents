@@ -62,6 +62,7 @@ Data <- Expenditure %>%
             by = c("FeatureCode" = "FeatureCode", 
                    "DateCode" = "DateCode"))
 
-fit <- lm(Expenditure~., data = Data[,-c(1,4,5)])
+fit <- lm(`Percentage Of Adults Reporting that they are Very or Fairly Satisfied with Public Transport`~., data = Data[,-c(1,4,5)])
 summary(fit)
 
+names(Data)
