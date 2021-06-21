@@ -1,11 +1,11 @@
 {
     "id": "C50BF51E",
-    "path": "F://DAS_28/code.R",
+    "path": "F:/DAS_28/code.R",
     "project_path": "code.R",
     "type": "r_source",
-    "hash": "0",
+    "hash": "1184276594",
     "contents": "",
-    "dirty": true,
+    "dirty": false,
     "created": 1624199034193.0,
     "source_on_save": false,
     "relative_order": 1,
@@ -17,11 +17,11 @@
         "scrollLine": "47"
     },
     "folds": "",
-    "lastKnownWriteTime": 1624306941,
+    "lastKnownWriteTime": 1624307526,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1624307379726,
+    "last_content_update": 1624307526955,
     "read_only": false,
     "read_only_alternatives": []
 }
