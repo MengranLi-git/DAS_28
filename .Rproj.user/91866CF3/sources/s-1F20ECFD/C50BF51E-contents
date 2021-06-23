@@ -11,8 +11,10 @@ for(i in 1:7){
 
 Casualties <- Casualties %>% 
   select(-c(Measurement, Units)) %>%
+  filter(Outcome == "Killed Or Seriously Injured") %>%
   spread(Outcome, Value) %>%
-  filter(Age == "All" & Gender == "All")
+  filter(Age == "All" & Gender == "All") %>%
+  select(-c(Age, Gender))
 
 Expenditure <- Expenditure %>%
   select(-c(Measurement, Units)) %>%
@@ -44,8 +46,8 @@ Purposes <- Purposes %>%
 
 Data <- Expenditure %>% 
   left_join(Casualties, 
-                          by = c("FeatureCode" = "FeatureCode", 
-                                 "DateCode" = "DateCode")) %>%
+            by = c("FeatureCode" = "FeatureCode", 
+                   "DateCode" = "DateCode")) %>%
   left_join(Cards, 
             by = c("FeatureCode" = "FeatureCode", 
                    "DateCode" = "DateCode")) %>%
@@ -62,7 +64,55 @@ Data <- Expenditure %>%
             by = c("FeatureCode" = "FeatureCode", 
                    "DateCode" = "DateCode"))
 
-fit <- lm(`Percentage Of Adults Reporting that they are Very or Fairly Satisfied with Public Transport`~., data = Data[,-c(1,4,5)])
+glimpse(Data)
+names(Data) <- c("FeatureCode", "DateCode", "Expenditure", "Killed_Injured",
+                 "Cards", "Congestion", "Repair", "Mileage", "Work_Bus",
+                 "Business", "School", "Commuting", "Work_Cycling", "Education",
+                 "Health", "Shopping", "Work_Train", "Work_Walking", "Train_Stations",
+                 "Satisfaction", "One_Car", "More_Car", "Without_Car", "Petrol_Diesel")
+
+Data$DateCode <- as.factor(Data$DateCode)
+fit <- lm(Satisfaction~., data = Data[,-1])
 summary(fit)
 
-names(Data)
+cor(na.omit(Data[,-c(1, 2, 3, 4)]))
+
+library(car)
+vif(fit)
+
+corrgram::corrgram(na.omit(Data[,-c(1, 2, 3, 4, 8)]))
+
+fit2 <- lm(Satisfaction~., data = Data[,-c(1, 3, 4, 8)])
+summary(fit2)
+
+
+n <- nrow(Data)[1] # sample size
+samp <- c(1:n)
+
+set.seed(21) # for reproducible results
+sample(samp, size = n, replace = TRUE) # sample with replacement
+
+coef <- fit2$coefficients
+
+nboot <- 1000 # number of bootstrap samples
+
+bs <- function(formula, data, indices) { 
+  boot.samp <- Data[sample(samp, size = n, replace = TRUE),] 
+  fit <- lm(formula, data = boot.samp[,-c(1, 3, 4, 8)])
+  return(coef(fit)) 
+}
+
+library(boot) 
+results <- boot(data=Data, statistic=bs, 
+                R=1000, formula=Satisfaction~.) 
+print(results) 
+
+ci <- matrix(NA, nrow = 25, ncol = 2)
+for(i in 1:25){
+  ci[i,] <- boot.ci(results, type="bca", index=i)$bca[4:5]
+}
+
+# significant at 0.05
+coef(fit)[sign(ci)[,1] == sign(ci)[,2]] 
+
+
