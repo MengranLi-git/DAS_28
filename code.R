@@ -1,7 +1,5 @@
 library(tidyverse)
 library(fs)
-library(car)
-library(boot)
 library(tidymodels)
 
 #### read data ####
@@ -36,7 +34,6 @@ Expenditure <- Expenditure %>%
   rename(Expenditure = Value)
 
 # remove variables at the whole Scotland level
-table(Transport$`Indicator (public transport)`)
 Transport <- Transport %>%
   select(-c(Measurement, Units)) %>%
   filter(`Indicator (public transport)` %in% c(
@@ -116,6 +113,25 @@ Data$DateCode <- as.factor(Data$DateCode)
 
 #### data summary ####
 
+# summary
+
+summary(Data[, -c(1, 2)])
+
+# density plot
+Data[, -c(1, 2)] %>%
+  gather(key = "variable", value = "value") %>%
+  ggplot() +
+  geom_density(aes(x=value), fill="#80C687", color="#80C687", alpha=0.8) +
+  facet_wrap(~variable, scales = "free")
+
+# scatter plot
+Data[, -c(1, 2)] %>%
+  gather(key = "variable", value = "value") %>%
+  mutate(Satisfaction = (Data[, -c(1, 2)] %>% pull(Satisfaction) %>% rep(22))) %>%
+  ggplot() +
+  geom_point(aes(x = value, y = Satisfaction), fill="#80C687", color="#80C687", alpha=0.8) +
+  facet_wrap(~variable, scales = "free")
+
 # correlation plot
 corr <- cor(na.omit(Data[, -c(1, 2)]))
 
@@ -154,7 +170,7 @@ summary(fit)
 par(mfrow = c(2, 2))
 plot(fit)
 
-# 3 4 8 24
+# 3 4 5 8 24
 # cards, killed_injured, expenditure, petrol_diesel, mileage are highly correlated.
 # model 2 without
 names(Data)[c(3, 4, 5, 8, 24)]
@@ -221,9 +237,6 @@ boot_coefs %>%
   filter(term == "Work_Train") %>%
   ggplot(aes(estimate)) +
   geom_histogram(alpha = 0.7, fill = "#80C687")
-
-
-
 
 
 
