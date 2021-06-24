@@ -130,7 +130,7 @@ ggplot(corrplot, aes(X, Y, fill = Z)) +
   scale_fill_gradient2(
     low = muted("#80C687"),
     mid = "white",
-    high = muted("red"),
+    high = muted("#FF4500"),
     midpoint = 0,
     breaks = c(-1, 0, 1), labels = c(-1, 0, 1),
     limits = c(-1, 1)
@@ -154,16 +154,28 @@ summary(fit)
 par(mfrow = c(2, 2))
 plot(fit)
 
+# 3 4 8 24
+# cards, killed_injured, expenditure, petrol_diesel, mileage are highly correlated.
 # model 2 without
-fit2 <- lm(Satisfaction ~ ., data = Data[, -c(1, 3, 4, 8)])
+names(Data)[c(3, 4, 5, 8, 24)]
 
-#
-
-
+fit2 <- lm(Satisfaction ~ ., data = Data[, -c(1, 3, 4, 8, 24)])
 summary(fit2)
+           
+fit3 <- lm(Satisfaction ~ ., data = Data[, -c(1, 3, 4, 8)])
+summary(fit3)
+
+fit4 <- lm(Satisfaction ~ ., data = Data[, -c(1, 3, 4)])
+summary(fit4)
 
 #### Model selection ####
 
+glance(fit)
+glance(fit2)
+glance(fit3)
+glance(fit4)
+
+# acording to the adjusted R2 and AIC, fit3 is the best
 
 #### Bootstrap ####
 boot_models <- bootstraps(Data[, -c(1, 3, 4, 8)], times = 1000, apparent = TRUE) %>%
