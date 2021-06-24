@@ -1,7 +1,7 @@
 library(tidyverse)
 library(fs)
 library(car)
-library(boot) 
+library(boot)
 library(tidymodels)
 
 #### read data ####
@@ -11,17 +11,19 @@ data_dir <- "data"
 # read data document name
 csv_files <- fs::dir_ls(data_dir, regexp = "\\.csv$")
 # dataset name
-dataset_name <- c("Casualties", "Expenditure", "Transport",
-          "Vehicles", "Cards", "Network", "Purposes")
+dataset_name <- c(
+  "Casualties", "Expenditure", "Transport",
+  "Vehicles", "Cards", "Network", "Purposes"
+)
 # read data and assign names to dataset
-for(i in 1:7){
+for (i in 1:7) {
   assign(dataset_name[i], readr::read_csv(csv_files[i]))
 }
 
 #### data wrangling ####
 
 # select total number of casualty outcomes
-Casualties <- Casualties %>% 
+Casualties <- Casualties %>%
   select(-c(Measurement, Units)) %>%
   filter(Outcome == "Killed Or Seriously Injured") %>%
   spread(Outcome, Value) %>%
@@ -37,8 +39,10 @@ Expenditure <- Expenditure %>%
 table(Transport$`Indicator (public transport)`)
 Transport <- Transport %>%
   select(-c(Measurement, Units)) %>%
-  filter(`Indicator (public transport)` %in% c("Number Of Passenger Train Stations",
-             "Percentage Of Adults Reporting that they are Very or Fairly Satisfied with Public Transport")) %>%
+  filter(`Indicator (public transport)` %in% c(
+    "Number Of Passenger Train Stations",
+    "Percentage Of Adults Reporting that they are Very or Fairly Satisfied with Public Transport"
+  )) %>%
   spread(`Indicator (public transport)`, Value)
 
 Vehicles <- Vehicles %>%
@@ -61,92 +65,122 @@ Purposes <- Purposes %>%
   spread(`Indicator (travel to work)`, Value)
 
 # merge all dataset into one complete dataset by 'FeatureCode' and 'DateCode'
-Data <- Expenditure %>% 
-  left_join(Casualties, 
-            by = c("FeatureCode" = "FeatureCode", 
-                   "DateCode" = "DateCode")) %>%
-  left_join(Cards, 
-            by = c("FeatureCode" = "FeatureCode", 
-                   "DateCode" = "DateCode")) %>%
-  left_join(Network, 
-            by = c("FeatureCode" = "FeatureCode", 
-                   "DateCode" = "DateCode")) %>%
-  left_join(Purposes, 
-            by = c("FeatureCode" = "FeatureCode", 
-                   "DateCode" = "DateCode")) %>%
-  left_join(Transport, 
-            by = c("FeatureCode" = "FeatureCode", 
-                   "DateCode" = "DateCode")) %>%
-  left_join(Vehicles, 
-            by = c("FeatureCode" = "FeatureCode", 
-                   "DateCode" = "DateCode"))
+Data <- Expenditure %>%
+  left_join(Casualties,
+    by = c(
+      "FeatureCode" = "FeatureCode",
+      "DateCode" = "DateCode"
+    )
+  ) %>%
+  left_join(Cards,
+    by = c(
+      "FeatureCode" = "FeatureCode",
+      "DateCode" = "DateCode"
+    )
+  ) %>%
+  left_join(Network,
+    by = c(
+      "FeatureCode" = "FeatureCode",
+      "DateCode" = "DateCode"
+    )
+  ) %>%
+  left_join(Purposes,
+    by = c(
+      "FeatureCode" = "FeatureCode",
+      "DateCode" = "DateCode"
+    )
+  ) %>%
+  left_join(Transport,
+    by = c(
+      "FeatureCode" = "FeatureCode",
+      "DateCode" = "DateCode"
+    )
+  ) %>%
+  left_join(Vehicles,
+    by = c(
+      "FeatureCode" = "FeatureCode",
+      "DateCode" = "DateCode"
+    )
+  )
 # rename variables
-names(Data) <- c("FeatureCode", "DateCode", "Expenditure", "Killed_Injured",
-                 "Cards", "Congestion", "Repair", "Mileage", "Work_Bus",
-                 "Business", "School", "Commuting", "Work_Cycling", "Education",
-                 "Health", "Shopping", "Work_Train", "Work_Walking", "Train_Stations",
-                 "Satisfaction", "One_Car", "More_Car", "Without_Car", "Petrol_Diesel")
+names(Data) <- c(
+  "FeatureCode", "DateCode", "Expenditure", "Killed_Injured",
+  "Cards", "Congestion", "Repair", "Mileage", "Work_Bus",
+  "Business", "School", "Commuting", "Work_Cycling", "Education",
+  "Health", "Shopping", "Work_Train", "Work_Walking", "Train_Stations",
+  "Satisfaction", "One_Car", "More_Car", "Without_Car", "Petrol_Diesel"
+)
 glimpse(Data)
 # Transform the DateCode as a factor
 Data$DateCode <- as.factor(Data$DateCode)
 
 #### data summary ####
 
+# correlation plot
+corr <- cor(na.omit(Data[, -c(1, 2)]))
 
+x <- rep(names(Data[, -c(1, 2)]))
+y <- rep(names(Data[, -c(1, 2)]))
+corrplot <- expand.grid(X = x, Y = y)
+corrplot$Z <- c(corr)
 
-cor(na.omit(Data[,-c(1, 2)]))
-
+ggplot(corrplot, aes(X, Y, fill = Z)) +
+  geom_tile(aes(fill = Z, alpha = 0.7), show.legend = FALSE) +
+  geom_text(aes(label = round(Z, 2))) +
+  scale_fill_gradient2(
+    low = muted("#80C687"),
+    mid = "white",
+    high = muted("red"),
+    midpoint = 0,
+    breaks = c(-1, 0, 1), labels = c(-1, 0, 1),
+    limits = c(-1, 1)
+  ) +
+  theme(
+    axis.text.x = element_text(
+      angle = 30,
+      vjust = .8,
+      hjust = 0.8
+    ),
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank()
+  )
 #### linear regression ####
 
 # full model
-fit <- lm(Satisfaction~., data = Data[,-1])
+fit <- lm(Satisfaction ~ ., data = Data[, -1])
 summary(fit)
 
 # Diagnostic chart
-par(mfrow=c(2,2)) 
+par(mfrow = c(2, 2))
 plot(fit)
 
+# model 2 without
+fit2 <- lm(Satisfaction ~ ., data = Data[, -c(1, 3, 4, 8)])
+
+#
 
 
-# model 2 without 
-fit2 <- lm(Satisfaction~., data = Data[,-c(1, 3, 4, 8)])
 summary(fit2)
 
 #### Model selection ####
 
+
 #### Bootstrap ####
-Data %>%
-  specify(formula = Satisfaction~., success = "yes") %>%
-  generate(reps = 1000) %>%
-  calculate(stat = "prop")
-# sample size
-n <- nrow(Data)[1] 
-samp <- c(1:n)
+boot_models <- bootstraps(Data[, -c(1, 3, 4, 8)], times = 1000, apparent = TRUE) %>%
+  mutate(
+    model = map(splits, ~ lm(Satisfaction ~ ., data = .)),
+    coef_info = map(model, tidy)
+  )
 
-# for reproducible results
-set.seed(21) 
+boot_coefs <- boot_models %>%
+  unnest(coef_info)
 
-# number of bootstrap samples
-nboot <- 1000 
+boot_coefs %>%
+  filter(term == "Congestion") %>%
+  ggplot(aes(estimate)) +
+  geom_histogram(alpha = 0.7, fill = "cyan3")
 
-# a function used to lm estimation via bootstrap
-bs <- function(formula, data, indices) { 
-  boot.samp <- Data[sample(samp, size = n, replace = TRUE),] 
-  fit <- lm(formula, data = boot.samp[,-c(1, 3, 4, 8)])
-  return(coef(fit)) 
-}
-
-# apply to the dataset
-results <- boot(data=Data, statistic=bs, 
-                R=1000, formula=Satisfaction~.) 
-print(results) 
-
-# confidence interval of 95%
-ci <- matrix(NA, nrow = 25, ncol = 2)
-for(i in 1:25){
-  ci[i,] <- boot.ci(results, type="bca", index=i)$bca[4:5]
-}
+ci <- int_pctl(boot_models, coef_info)
 
 # significant at 0.05
-coef(fit)[sign(ci)[,1] == sign(ci)[,2]] 
-
+ci[sign(ci[, 2]) == sign(ci[, 4]), c(1, 3)]

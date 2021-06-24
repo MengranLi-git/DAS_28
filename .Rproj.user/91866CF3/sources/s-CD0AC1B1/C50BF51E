@@ -3,9 +3,9 @@
     "path": "F://DAS_28/code.R",
     "project_path": "code.R",
     "type": "r_source",
-    "hash": "0",
+    "hash": "4137750463",
     "contents": "",
-    "dirty": true,
+    "dirty": false,
     "created": 1624199034193.0,
     "source_on_save": false,
     "relative_order": 1,
@@ -17,11 +17,11 @@
         "scrollLine": "142"
     },
     "folds": "",
-    "lastKnownWriteTime": 1624524529,
+    "lastKnownWriteTime": 1624529489,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1624529261000,
+    "last_content_update": 1624529489676,
     "read_only": false,
     "read_only_alternatives": []
 }
