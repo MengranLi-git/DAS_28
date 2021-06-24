@@ -187,12 +187,47 @@ boot_models <- bootstraps(Data[, -c(1, 3, 4, 8)], times = 1000, apparent = TRUE)
 boot_coefs <- boot_models %>%
   unnest(coef_info)
 
-boot_coefs %>%
-  filter(term == "Congestion") %>%
-  ggplot(aes(estimate)) +
-  geom_histogram(alpha = 0.7, fill = "cyan3")
-
 ci <- int_pctl(boot_models, coef_info)
 
 # significant at 0.05
 ci[sign(ci[, 2]) == sign(ci[, 4]), c(1, 3)]
+
+boot_coefs %>%
+  filter(term == "Cards") %>%
+  ggplot(aes(estimate)) +
+  geom_histogram(alpha = 0.7, fill = "#80C687")
+
+boot_coefs %>%
+  filter(term == "Petrol_Diesel") %>%
+  ggplot(aes(estimate)) +
+  geom_histogram(alpha = 0.7, fill = "#80C687")
+
+boot_coefs %>%
+  filter(term == "Repair") %>%
+  ggplot(aes(estimate)) +
+  geom_histogram(alpha = 0.7, fill = "#80C687")
+
+boot_coefs %>%
+  filter(term == "Train_Stations") %>%
+  ggplot(aes(estimate)) +
+  geom_histogram(alpha = 0.7, fill = "#80C687")
+
+boot_coefs %>%
+  filter(term == "Work_Bus") %>%
+  ggplot(aes(estimate)) +
+  geom_histogram(alpha = 0.7, fill = "#80C687")
+
+boot_coefs %>%
+  filter(term == "Work_Train") %>%
+  ggplot(aes(estimate)) +
+  geom_histogram(alpha = 0.7, fill = "#80C687")
+
+
+
+
+
+
+
+
+
+
