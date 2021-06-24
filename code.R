@@ -1,14 +1,26 @@
 library(tidyverse)
 library(fs)
-data_dir <- "data"
-csv_files <- fs::dir_ls(data_dir, regexp = "\\.csv$")
+library(car)
+library(boot) 
+library(tidymodels)
 
+#### read data ####
+
+# set data path
+data_dir <- "data"
+# read data document name
+csv_files <- fs::dir_ls(data_dir, regexp = "\\.csv$")
+# dataset name
 dataset_name <- c("Casualties", "Expenditure", "Transport",
           "Vehicles", "Cards", "Network", "Purposes")
+# read data and assign names to dataset
 for(i in 1:7){
   assign(dataset_name[i], readr::read_csv(csv_files[i]))
 }
 
+#### data wrangling ####
+
+# select total number of casualty outcomes
 Casualties <- Casualties %>% 
   select(-c(Measurement, Units)) %>%
   filter(Outcome == "Killed Or Seriously Injured") %>%
@@ -16,10 +28,13 @@ Casualties <- Casualties %>%
   filter(Age == "All" & Gender == "All") %>%
   select(-c(Age, Gender))
 
+# rename variable name
 Expenditure <- Expenditure %>%
   select(-c(Measurement, Units)) %>%
   rename(Expenditure = Value)
 
+# remove variables at the whole Scotland level
+table(Transport$`Indicator (public transport)`)
 Transport <- Transport %>%
   select(-c(Measurement, Units)) %>%
   filter(`Indicator (public transport)` %in% c("Number Of Passenger Train Stations",
@@ -30,6 +45,7 @@ Vehicles <- Vehicles %>%
   select(-c(Measurement, Units)) %>%
   spread(`Indicator (road vehicles)`, Value)
 
+# retain card numbers of all people
 Cards <- Cards %>%
   select(-c(Measurement, Units)) %>%
   spread(Age, Value) %>%
@@ -44,6 +60,7 @@ Purposes <- Purposes %>%
   select(-c(Measurement, Units)) %>%
   spread(`Indicator (travel to work)`, Value)
 
+# merge all dataset into one complete dataset by 'FeatureCode' and 'DateCode'
 Data <- Expenditure %>% 
   left_join(Casualties, 
             by = c("FeatureCode" = "FeatureCode", 
@@ -63,50 +80,68 @@ Data <- Expenditure %>%
   left_join(Vehicles, 
             by = c("FeatureCode" = "FeatureCode", 
                    "DateCode" = "DateCode"))
-
-glimpse(Data)
+# rename variables
 names(Data) <- c("FeatureCode", "DateCode", "Expenditure", "Killed_Injured",
                  "Cards", "Congestion", "Repair", "Mileage", "Work_Bus",
                  "Business", "School", "Commuting", "Work_Cycling", "Education",
                  "Health", "Shopping", "Work_Train", "Work_Walking", "Train_Stations",
                  "Satisfaction", "One_Car", "More_Car", "Without_Car", "Petrol_Diesel")
-
+glimpse(Data)
+# Transform the DateCode as a factor
 Data$DateCode <- as.factor(Data$DateCode)
+
+#### data summary ####
+
+
+
+cor(na.omit(Data[,-c(1, 2)]))
+
+#### linear regression ####
+
+# full model
 fit <- lm(Satisfaction~., data = Data[,-1])
 summary(fit)
 
-cor(na.omit(Data[,-c(1, 2, 3, 4)]))
+# Diagnostic chart
+par(mfrow=c(2,2)) 
+plot(fit)
 
-library(car)
-vif(fit)
 
-corrgram::corrgram(na.omit(Data[,-c(1, 2, 3, 4, 8)]))
 
+# model 2 without 
 fit2 <- lm(Satisfaction~., data = Data[,-c(1, 3, 4, 8)])
 summary(fit2)
 
+#### Model selection ####
 
-n <- nrow(Data)[1] # sample size
+#### Bootstrap ####
+Data %>%
+  specify(formula = Satisfaction~., success = "yes") %>%
+  generate(reps = 1000) %>%
+  calculate(stat = "prop")
+# sample size
+n <- nrow(Data)[1] 
 samp <- c(1:n)
 
-set.seed(21) # for reproducible results
-sample(samp, size = n, replace = TRUE) # sample with replacement
+# for reproducible results
+set.seed(21) 
 
-coef <- fit2$coefficients
+# number of bootstrap samples
+nboot <- 1000 
 
-nboot <- 1000 # number of bootstrap samples
-
+# a function used to lm estimation via bootstrap
 bs <- function(formula, data, indices) { 
   boot.samp <- Data[sample(samp, size = n, replace = TRUE),] 
   fit <- lm(formula, data = boot.samp[,-c(1, 3, 4, 8)])
   return(coef(fit)) 
 }
 
-library(boot) 
+# apply to the dataset
 results <- boot(data=Data, statistic=bs, 
                 R=1000, formula=Satisfaction~.) 
 print(results) 
 
+# confidence interval of 95%
 ci <- matrix(NA, nrow = 25, ncol = 2)
 for(i in 1:25){
   ci[i,] <- boot.ci(results, type="bca", index=i)$bca[4:5]
@@ -114,5 +149,4 @@ for(i in 1:25){
 
 # significant at 0.05
 coef(fit)[sign(ci)[,1] == sign(ci)[,2]] 
-
 
