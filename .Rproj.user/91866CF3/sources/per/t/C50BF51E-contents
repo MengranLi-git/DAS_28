@@ -191,7 +191,7 @@ glance(fit2)
 glance(fit3)
 glance(fit4)
 
-# acording to the adjusted R2 and AIC, fit3 is the best
+# according to the adjusted R2 and AIC, fit3 is the best
 
 #### Bootstrap ####
 boot_models <- bootstraps(Data[, -c(1, 3, 4, 8)], times = 1000, apparent = TRUE) %>%
