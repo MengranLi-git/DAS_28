@@ -28,6 +28,22 @@ output:
     pandoc_args: --mathjax
 ---
 
+```{r}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+```
+
+
+```{r}
+library(tidyverse)
+library(fs)
+library(tidymodels)
+library(GGally)
+library(car)
+library(gvlma)
+load("Data.Rdata")
+```
+
+
 Introduction
 ================================================================================
 
@@ -60,10 +76,57 @@ Data
 
 [Travel to Work and Other Purposes](https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2Ftravel-to-work-other): Statistics on what mode of transport (walking, cycling, car, bus, train) people usually use to get to work and education, purposes of journeys made by Scottish people.
 
-Objectives {.block}
+Data Summary
 ================================================================================
+```{r}
+Data[, -c(1, 2)] %>%
+  gather(key = "variable", value = "value") %>%
+  ggplot() +
+  geom_histogram(aes(x=value), fill="#80C687", color="#80C687", alpha=0.8) +
+  facet_wrap(~variable, scales = "free")
+```
 
-Lorem ipsum dolor sit amet, consectetur, nunc tellus pulvinar tortor, commodo eleifend risus arcu sed odio
+
+```{r}
+Data[, -c(1, 2)] %>%
+  gather(key = "variable", value = "value") %>%
+  mutate(Satisfaction = (Data[, -c(1, 2)] %>% pull(Satisfaction) %>% rep(22))) %>%
+  ggplot() +
+  geom_point(aes(x = value, y = Satisfaction), fill="#80C687", color="#80C687", alpha=0.8) +
+  facet_wrap(~variable, scales = "free")
+```
+
+
+```{r}
+corr <- cor(na.omit(Data[, -c(1, 2)]))
+
+x <- rep(names(Data[, -c(1, 2)]))
+y <- rep(names(Data[, -c(1, 2)]))
+corrplot <- expand.grid(X = x, Y = y)
+corrplot$Z <- c(corr)
+
+ggplot(corrplot, aes(X, Y, fill = Z)) +
+  geom_tile(aes(fill = Z, alpha = 0.7), show.legend = FALSE) +
+  geom_text(aes(label = round(Z, 2))) +
+  scale_fill_gradient2(
+    low = muted("#80C687"),
+    mid = "white",
+    high = muted("#FF4500"),
+    midpoint = 0,
+    breaks = c(-1, 0, 1), labels = c(-1, 0, 1),
+    limits = c(-1, 1)
+  ) +
+  theme(
+    axis.text.x = element_text(
+      angle = 30,
+      vjust = .8,
+      hjust = 0.8
+    ),
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank()
+  )
+```
+
 
 Methods
 ================================================================================
