@@ -1,0 +1,7 @@
+"0","my_skim <- skim_with(numeric = sfl(hist = NULL))"
+"0","my_skim(Data[, -c(1,2)])  %>%"
+"0","  dplyr::select(-skim_type) %>%"
+"0","  kable(col.names = c(""Variable"", ""Missing"", ""Complete"", ""Mean"", ""SD"", ""Min."", ""1st Q."", ""Median"",""3rd Q."", ""Max.""),"
+"0","        caption = '\\label{tab:summary} Summary statistics on teaching and beauty scores.',"
+"0","        booktabs = TRUE, format = ""latex"", digits = 2) %>%"
+"0","  kable_styling(font_size = 10, latex_options = ""hold_position"")"

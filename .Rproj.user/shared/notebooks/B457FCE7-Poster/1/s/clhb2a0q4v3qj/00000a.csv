@@ -4,6 +4,7 @@
 "0","library(GGally)"
 "0","library(car)"
 "0","library(gvlma)"
-"0","load(""/Data.Rdata"")"
-"2","Error in readChar(con, 5L, useBytes = TRUE) : cannot open the connection
-"
+"0","library(skimr)"
+"0","library(kableExtra)"
+"0",""
+"0","load(""../Data.Rdata"")"
