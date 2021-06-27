@@ -1,7 +1,9 @@
 library(tidyverse)
 library(fs)
 library(tidymodels)
-
+library(GGally)
+library(car)
+library(gvlma)
 #### read data ####
 
 # set data path
@@ -121,7 +123,7 @@ summary(Data[, -c(1, 2)])
 Data[, -c(1, 2)] %>%
   gather(key = "variable", value = "value") %>%
   ggplot() +
-  geom_density(aes(x=value), fill="#80C687", color="#80C687", alpha=0.8) +
+  geom_histogram(aes(x=value), fill="#80C687", color="#80C687", alpha=0.8) +
   facet_wrap(~variable, scales = "free")
 
 # scatter plot
@@ -163,40 +165,44 @@ ggplot(corrplot, aes(X, Y, fill = Z)) +
 #### linear regression ####
 
 # full model
-fit <- lm(Satisfaction ~ ., data = Data[, -1])
+fit <- lm(Satisfaction ~ ., data = na.omit(Data[, -1]))
 summary(fit)
 
 # Diagnostic chart
 par(mfrow = c(2, 2))
 plot(fit)
 
+gvmodel <- gvlma(fit) 
+summary(gvmodel) 
+
+vif(fit)
+
+stepAIC(fit, na.rm = TRUE)
+
 # 3 4 5 8 24
 # cards, killed_injured, expenditure, petrol_diesel, mileage are highly correlated.
 # model 2 without
 names(Data)[c(3, 4, 5, 8, 24)]
 
-fit2 <- lm(Satisfaction ~ ., data = Data[, -c(1, 3, 4, 8, 24)])
+fit2 <- lm(Satisfaction ~ DateCode + Cards + Repair + Work_Bus + 
+             School + Health + Work_Train + Train_Stations + Without_Car + 
+             Petrol_Diesel, data = na.omit(Data[, -1]))
 summary(fit2)
-           
-fit3 <- lm(Satisfaction ~ ., data = Data[, -c(1, 3, 4, 8)])
-summary(fit3)
 
-fit4 <- lm(Satisfaction ~ ., data = Data[, -c(1, 3, 4)])
-summary(fit4)
 
 #### Model selection ####
 
 glance(fit)
 glance(fit2)
-glance(fit3)
-glance(fit4)
 
 # according to the adjusted R2 and AIC, fit3 is the best
 
 #### Bootstrap ####
 boot_models <- bootstraps(Data[, -c(1, 3, 4, 8)], times = 1000, apparent = TRUE) %>%
   mutate(
-    model = map(splits, ~ lm(Satisfaction ~ ., data = .)),
+    model = map(splits, ~ lm(Satisfaction ~ DateCode + Cards + Repair + Work_Bus + 
+                               School + Health + Work_Train + Train_Stations + Without_Car + 
+                               Petrol_Diesel, data = .)),
     coef_info = map(model, tidy)
   )
 
@@ -204,39 +210,25 @@ boot_coefs <- boot_models %>%
   unnest(coef_info)
 
 ci <- int_pctl(boot_models, coef_info)
-
 # significant at 0.05
-ci[sign(ci[, 2]) == sign(ci[, 4]), c(1, 3)]
+sig <- ci[sign(ci[, 2]) == sign(ci[, 4]), ] %>% pull(term)
+
+boot_coefs <-  boot_coefs %>%
+  mutate(sig = ifelse(term %in% sig, "TRUE", "FALSE")) %>%
+  filter(term %in% c("Health", "Petrol_Diesel","Repair", "School", "Train_Stations", "Without_Car", "Work_Bus", "Work_Train"))
+
+boot_coefs2 <- boot_coefs %>%
+  group_by(term) %>%
+  summarise(est = median(estimate), lower = quantile(estimate, 0.025), upper = quantile(estimate, 0.975))
 
 boot_coefs %>%
-  filter(term == "Cards") %>%
-  ggplot(aes(estimate)) +
-  geom_histogram(alpha = 0.7, fill = "#80C687")
-
-boot_coefs %>%
-  filter(term == "Petrol_Diesel") %>%
-  ggplot(aes(estimate)) +
-  geom_histogram(alpha = 0.7, fill = "#80C687")
-
-boot_coefs %>%
-  filter(term == "Repair") %>%
-  ggplot(aes(estimate)) +
-  geom_histogram(alpha = 0.7, fill = "#80C687")
-
-boot_coefs %>%
-  filter(term == "Train_Stations") %>%
-  ggplot(aes(estimate)) +
-  geom_histogram(alpha = 0.7, fill = "#80C687")
-
-boot_coefs %>%
-  filter(term == "Work_Bus") %>%
-  ggplot(aes(estimate)) +
-  geom_histogram(alpha = 0.7, fill = "#80C687")
-
-boot_coefs %>%
-  filter(term == "Work_Train") %>%
-  ggplot(aes(estimate)) +
-  geom_histogram(alpha = 0.7, fill = "#80C687")
+  ggplot() +
+  geom_density(aes(estimate, fill = sig), alpha = 0.7,  color = "white") +
+  geom_vline(data = boot_coefs2, mapping = aes(xintercept = est))+
+  geom_vline(data = boot_coefs2, mapping = aes(xintercept = lower), color="Red", lty = 2)+
+  geom_vline(data = boot_coefs2, mapping = aes(xintercept = upper), color="Red", lty = 2)+
+  geom_vline(data = boot_coefs2, mapping = aes(xintercept = 0), color="Blue", lty = 2)+
+  facet_wrap(~term, scales = "free")
 
 
 
