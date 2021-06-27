@@ -1,0 +1,137 @@
+---
+title: "Unnecessarily Complicated Research Title"
+author: "John Smith, James Smith, and Jane Smith"
+institute: "Department of Mathmatics & Stastistics, University of Glasgow"
+date: 'r Sys.Date()'
+references:
+  - id: R-base
+    author:
+    - family: "R Core Team"
+      given: ""
+    title: 'R: A Language and Environment for Statistical Computing'
+    issued:
+      year: 2018
+    URL: https://www.r-project.org
+  - id: R-pagedown
+    author:
+    - family: Xie
+      given: Yihui
+    - family: Lesur
+      given: Romain
+    title: 'Paginate the HTML Output of R Markdown with CSS for Print'
+    issued:
+      year: 2018
+    URL: https://github.com/rstudio/pagedown
+output:
+  pagedown::poster_jacobs:
+    self_contained: false
+    pandoc_args: --mathjax
+---
+
+Introduction
+================================================================================
+
+Lorem ipsum dolor **sit amet**, consectetur adipiscing elit. Donec ut volutpat elit. Sed laoreet accumsan mattis. Integer sapien tellus, auctor ac blandit eget, sollicitudin vitae lorem. Praesent dictum tempor pulvinar. Suspendisse potenti. Sed tincidunt varius ipsum, et porta nulla suscipit et. Etiam congue bibendum felis, ac dictum augue cursus a. **Donec** magna eros, iaculis sit amet placerat quis, laoreet id est.
+
+```{r, cars-plot, fig.width=6, fig.height=3, dev='svg', out.width='100%', fig.cap='Figure Caption.', echo=FALSE}
+par(mar = c(4, 4, .1, .1), las = 1)
+boxplot(
+  Sepal.Length ~ Species, data = iris, horizontal = TRUE,
+  col = c('limegreen', 'steelblue', 'orange'), notch = TRUE
+)
+```
+
+Test citations @R-base @R-pagedown. See Figure \@ref(fig:cars-plot).
+
+Data
+================================================================================
+
+[Road Casualties](https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2Froad-safety): Number of people killed and seriously injured on Scotland's roads by age and gender.
+
+[Road Transport Expenditure](https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2Froad-transport-expenditure): Local and central government transport expenditure
+
+[Public Transport](https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2Fpublic-transport): Number of bus passenger journeys and bus vehicle kilometres on all services, passenger train stations and satisfaction with public transport. Figures for the convenience of public transport are from the Scottish Household Survey (SHS). Note that the public convenience data is no longer updated as the question was withdrawn from the survey.
+
+[Road Vehicles](https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2Froad-vehicles): Road vehicle numbers, household car ownership and fuel consumption.
+
+[Concessionary Travel Cards](https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2Fconcessionary-cards): Number of concessionary cards issued to all adults, and adults aged over 60.
+
+[Road Network and Traffic](https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2Froad-network-traffic): Road network traffic, perceptions of congestion and road condition.
+
+[Travel to Work and Other Purposes](https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2Ftravel-to-work-other): Statistics on what mode of transport (walking, cycling, car, bus, train) people usually use to get to work and education, purposes of journeys made by Scottish people.
+
+Objectives {.block}
+================================================================================
+
+Lorem ipsum dolor sit amet, consectetur, nunc tellus pulvinar tortor, commodo eleifend risus arcu sed odio
+
+Methods
+================================================================================
+
+Lorem ipsum dolor **sit amet**, consectetur adipiscing elit. Sed laoreet accumsan mattis. Integer sapien tellus, auctor ac blandit eget, sollicitudin vitae lorem. Praesent dictum tempor pulvinar. Suspendisse potenti. Sed tincidunt varius ipsum, et porta nulla suscipit et. Etiam congue bibendum felis, ac dictum augue cursus a. **Donec** magna eros, iaculis sit amet placerat quis, laoreet id est. In ut orci purus, interdum ornare nibh. Pellentesque pulvinar, nibh ac malesuada accumsan, urna nunc convallis tortor, ac vehicula nulla tellus eget nulla. Nullam lectus tortor, _consequat tempor hendrerit_ quis, vestibulum in diam. Maecenas sed diam augue.
+
+Important Result
+================================================================================
+
+Lorem ipsum dolor **sit amet**, consectetur adipiscing elit. Sed commodo molestie porta. Sed ultrices scelerisque sapien ac commodo. Donec ut volutpat elit.
+
+
+
+Mathematical Section
+================================================================================
+
+Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin. Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin.
+  
+\begin{equation}
+E = mc^{2}
+(\#eq:Einstein)
+\end{equation}
+
+Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin. Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin.
+
+\begin{equation}
+\cos^3 \theta =\frac{1}{4}\cos\theta+\frac{3}{4}\cos 3\theta
+(\#eq:refname)
+\end{equation}
+
+Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin. Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin.
+
+\begin{equation}
+\kappa =\frac{\xi}{E_{\mathrm{max}}}
+\end{equation}
+
+Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin. Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin.
+
+
+Results
+================================================================================
+
+::: {.figure-example}
+Placeholder  
+~~~~~~~  
+Image
+
+Figure 2: Figure caption.
+:::
+
+Nunc tempus venenatis facilisis. Curabitur suscipit consequat eros non porttitor. Sed a massa dolor, id ornare enim:
+
+```{r echo=FALSE}
+knitr::kable(iris[1:5, 1:4], caption = 'Table caption.')
+```
+
+
+Conclusion
+================================================================================
+
+Nunc tempus venenatis facilisis. **Curabitur suscipit** consequat eros non porttitor. Sed a massa dolor, id ornare enim. Fusce quis massa dictum tortor **tincidunt mattis**. Donec quam est, lobortis quis pretium at, laoreet scelerisque lacus. Nam quis odio enim, in molestie libero. Vivamus cursus mi at _nulla elementum sollicitudin_.
+
+Nunc tempus venenatis facilisis. **Curabitur suscipit** consequat eros non porttitor. Sed a massa dolor, id ornare enim. Fusce quis massa dictum tortor **tincidunt mattis**. Donec quam est, lobortis quis pretium at, laoreet scelerisque lacus. Nam quis odio enim, in molestie libero. Vivamus cursus mi at _nulla elementum sollicitudin_.
+
+
+References
+================================================================================
+
+<div id="refs"></div>
+
+
