@@ -1,0 +1,12 @@
+#### Model selection ####
+
+gfit <- glance(fit)
+gfit2 <- glance(fit2)
+gfit3 <- glance(fit3)
+gfit4 <- glance(fit4)
+
+gfit.AIC <- c(gfit$AIC, gfit2$AIC, gfit3$AIC, gfit4$AIC)
+gfit.adjR2 <- c(gfit$adj.r.squared, gfit2$adj.r.squared, gfit3$adj.r.squared, gfit4$adj.r.squared)
+Select.matrix <- rbind(gfit.AIC, gfit.adjR2)
+colnames(Select.matrix) <- c("model 1", "model 2", "model 3", "model 4")
+Select.matrix %>% write.csv("Selection.csv")
