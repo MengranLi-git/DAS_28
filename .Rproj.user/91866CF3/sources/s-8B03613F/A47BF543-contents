@@ -60,7 +60,9 @@ Totally 460 observations.
 
 -  Linear regression, model diagnosis
 
--  Model selection, adjusted R2 and AIC as criterion
+-  Model selection: step AIC
+
+-  Model comparison: adjusted R2, AIC and BIC as criterion
 
 -  Bootstrap to select variables significant at 0.95, obtain the 95% CI of parameter estimations and their distributions.
 
