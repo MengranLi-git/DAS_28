@@ -7,7 +7,6 @@ library(gvlma)
 #### read data ####
 
 # set data path
-setwd("F:/DAS_28")
 data_dir <- "data"
 # read data document name
 csv_files <- fs::dir_ls(data_dir, regexp = "\\.csv$")
