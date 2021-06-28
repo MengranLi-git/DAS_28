@@ -1,7 +1,0 @@
-"0","library(tidyverse)"
-"0","library(fs)"
-"0","library(tidymodels)"
-"0","library(GGally)"
-"0","library(car)"
-"0","library(gvlma)"
-"0","load(""Data.Rdata"")"
