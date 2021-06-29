@@ -1,0 +1,8 @@
+h2 {
+  color: #47CCD0;
+  border-bottom: 3px dashed #47CCD0;
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+  font-size: 1.5em;
+  font-weight: bold;
+}

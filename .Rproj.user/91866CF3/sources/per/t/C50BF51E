@@ -1,6 +1,6 @@
 {
     "id": "C50BF51E",
-    "path": "F:/DAS_28/code.R",
+    "path": "F://DAS_28/code.R",
     "project_path": "code.R",
     "type": "r_source",
     "hash": "129761206",
@@ -13,8 +13,8 @@
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "13,18",
-        "scrollLine": "3"
+        "cursorPosition": "171,0",
+        "scrollLine": "168"
     },
     "folds": "22|20|114|0|\n",
     "lastKnownWriteTime": 1624872389,

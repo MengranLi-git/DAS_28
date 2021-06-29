@@ -1,20 +1,17 @@
 ---
-title: Generate Reproducible & Live HTML and PDF Conference Posters Using RMarkdown
+title: "**Factors influencing Scots' satisfaction with public transport**"
 author:
-  - name: Brent Thorne
-    affil: 1
-  - name: Another G. Author
-    affil: 2
-affiliation:
-  - num: 1
-    address: Department of Mathmatics & Statistics, University of Glasgow
+  - name: '*Group 28: Aishwin Tikku, Mengran Li, Steven Kwok, Shaoquan Li, Shuning Li*'
 column_numbers: 3
-logoright_name: "Poster_files/figure-html/UoG_keyline.png"
 logoleft_name: "Poster_files/figure-html/UoG_keyline.png"
 output: 
   posterdown::posterdown_html:
     self_contained: false
+    css: ["css/poster.css"]
 bibliography: packages.bib
+primary_colour: "#47CCD0"
+poster_height: "33in"
+knit: pagedown::chrome_print
 ---
 
 ```{r setup, include=FALSE}
@@ -36,74 +33,78 @@ load("../Data.Rdata")
 
 # Introduction
 
-Welcome to `posterdown` ! This is my attempt to provide a semi-smooth workflow for those who wish to take their R Markdown skills to the conference world. Most features from R Markdown are available in this package such as Markdown section notation, figure captioning, and even citations like this one [@R-rmarkdown]. The rest of this example poster will show how you can insert typical conference poster features into your own document. 
+-   We **aim** to find factors related to passengers' satisfaction with public transport to help operator to improve its service.
 
-## Objectives
-
-1. Easy to use reproducible poster design. 
-2. Integration with R Markdown.
-3. Easy transition from `posterdown` to `pagedown` report or manuscript documents [@R-pagedown].
+-   The **data** are from [Scotland's official statistics](https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdef%2Fconcept%2Ffolders%2Fthemes%2Ftransport). The theme of Transport contains seven datasets, [Road Transport Expenditure](https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2Froad-transport-expenditure), [Public Transport](https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2Fpublic-transport), [Road Vehicles](https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2Froad-vehicles), [Concessionary Travel Cards](https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2Fconcessionary-cards), [Road Network and Traffic](https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2Froad-network-traffic), [Travel to Work and Other Purposes](https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2Ftravel-to-work-other). There are 460 observations of 24 variables in this research.
 
 # Methods
 
-This package uses the same workflow approach as the R Markdown you know and love. Basically it goes from RMarkdown > Knitr > Markdown > Pandoc > HTML/CSS > PDF. You can even use the bibliography the same way [@R-posterdown].
+-   Summarize table and density plot are illustrated to detect data patterns. The scatter and correlation plots are proposed to explore the relationship among variables. Potential factors are identified through **EDA**.
+
+-   The *Satisfaction* is the response variable, the *DateCode* is the control variable and others are independent variables. A **linear regression** model is applied as Eq.(1):\\begin{equation}y=\\beta_0+\\beta_1x_1+\\dots+\\beta_px_p+\\varepsilon \\label{eq:(1)} \\tag{1} \\end{equation}
+
+-   **Model diagnosis** are carried out to check model assumptions. **Stepwise regression** is applied to select variable with **AIC** as criterion. Compare the selected model with the full model in $adj$ $R^2$, AIC and BIC.
+
+-   The uncertainty of the parameters is determined via **bootstrap** method. The significant variables are verified and their 95% CI are estimated.
 
 # Results
 
 ```{r}
-my_skim <- skim_with()
-
-my_skim(Data[, -c(1,2)])  %>%
-  select(c(skim_variable, numeric.mean, numeric.sd, numeric.p0, numeric.p100)) %>%
-  mutate(numeric.mean = round(numeric.mean,2), numeric.sd = round(numeric.sd,2)) %>%
-  kable(col.names = c("Variable", "Mean", "SD", "min", "max"))
+fit <- lm(Satisfaction ~ ., data = na.omit(Data[, -1]))
 ```
 
+## Model diagnosis
 
-```{r, out.width='100%'}
-corr <- cor(na.omit(Data[, -c(1, 2)]))
+[Fig.1]{style="color:#cc0000"} shows the regression diagnosis results of model1 with all variables.
 
-x <- rep(names(Data[, -c(1, 2)]))
-y <- rep(names(Data[, -c(1, 2)]))
-corrplot <- expand.grid(X = x, Y = y)
-corrplot$Z <- c(corr)
+-   [Residuals vs Fitted plot]{style="color:#cc0000"} (left top) shows that there is no systematic correlation between the residual value and the fitting value.
 
-ggplot(corrplot, aes(X, Y, fill = Z)) +
-  geom_tile(aes(fill = Z, alpha = 0.7), show.legend = FALSE) +
-  geom_text(aes(label = round(Z, 2)), size = 1.5) +
-  scale_fill_gradient2(
-    low = muted("#80C687"),
-    mid = "white",
-    high = muted("#FF4500"),
-    midpoint = 0,
-    breaks = c(-1, 0, 1), labels = c(-1, 0, 1),
-    limits = c(-1, 1)
-  ) +
-  theme(
-    axis.text.x = element_text(
-      angle = 30,
-      vjust = .8,
-      hjust = 0.8
-    ),
-    axis.title.x = element_blank(),
-    axis.title.y = element_blank()
-  )
+-   [Normal Q-Q plot]{style="color:#cc0000"} (right top) shows the points on the graph fall on a straight line with an angle of 45 degrees, which indicates the assumption of normality is not violated.
+
+-   [Scale-location plot]{style="color:#cc0000"} (left bottom) displays the points around the horizontal line are randomly distributed. The invariant variance assumption is satisfied.
+
+-   [Residuals vs leverage]{style="color:#cc0000"} (right bottom) figures out special observations.
+
+-   According to the correlation plot and VIF, there is obvious **multicollinearity** among variables.
+
+```{r, out.width='80%', fig.cap="\\label{fig:dia} Regression diagnosis results", fig.height = 5, fig.align='center'}
+par(mfrow = c(2, 2), mar=c(2,2,2,2))
+plot(fit)
 ```
 
+## Stepwise regression
+
+Stepwise regression technique is applied to model selection. The selected model is as [Table. 1]{style="color:#cc0000"}. 
 
 ```{r}
-fit <- lm(Satisfaction ~ ., data = na.omit(Data[, -1]))
 fit2 <- lm(Satisfaction ~ DateCode + Cards + Repair + Work_Bus + 
              School + Health + Work_Train + Train_Stations + Without_Car + 
              Petrol_Diesel, data = na.omit(Data[, -1]))
+tidy(fit2) %>% 
+  filter(!term %in% c("DateCode2012","DateCode2014","DateCode2015",
+                     "DateCode2016","DateCode2017","DateCode2018")) %>%
+  kable(caption = 'Model2, selected by Stepwise regression')
+```
+
+The variables with high correlation are removed by stepwise regression.
+
+## Model compare
+
+```{r}
 glance(fit) %>% 
   full_join(glance(fit2)) %>%
   select(adj.r.squared, AIC, BIC) %>% 
   add_column(model = c("model 1", "model 2"), .before = "adj.r.squared") %>%
-  kable()
+  kable(caption = 'Compare selected model by Stepwise regression with the full model')
 ```
 
-```{r, out.width='100%'}
+The model2 has higher $adj$ $R^2$ and smaller AIC and BIC compared with the model1 as [Table. 2]{style="color:#cc0000"}. Therefore the **model2** is better.
+
+## Bootstrap
+
+To obtain robust results, bootstrap is developed to the estimation of parameters.
+
+```{r, out.width='80%', fig.cap="Density plots of parameters via bootstrap", fig.height = 5, fig.align='center'}
 boot_models <- bootstraps(Data[, -c(1, 3, 4, 8)], times = 1000, apparent = TRUE) %>%
   mutate(
     model = map(splits, ~ lm(Satisfaction ~ DateCode + Cards + Repair + Work_Bus + 
@@ -137,18 +138,16 @@ boot_coefs %>%
   facet_wrap(~term, scales = "free")
 ```
 
-
-
-# Next Steps
-
-Aliquam sed faucibus risus, quis efficitur erat. Vestibulum semper mauris quis tempus eleifend. Aliquam sagittis dictum ipsum, quis viverra ligula eleifend ut. Curabitur sagittis vitae arcu eget faucibus. In non elementum felis. Duis et aliquam nunc. Nunc pulvinar sapien nunc, vel pretium nisi efficitur in. Fusce fringilla maximus leo et maximus. Fusce at ligula laoreet, iaculis mi at, auctor odio. Praesent sed elementum justo. Aenean consectetur risus rhoncus tincidunt efficitur. Praesent dictum mauris at diam maximus maximus [@R-posterdown].
+The density plots of parameters are displayed in [Fig.3]{style="color:#cc0000"}. The variables with orange are not significant while the variables with blue are significant at the $\alpha=0.05$. The blue dashed lines are zero and the orange dashed lines are 95% CI of parameters.
 
 # Conclusion
 
-Try `posterdown` out! Hopefully you like it!
-
-```{r, include=FALSE}
-knitr::write_bib(c('knitr','rmarkdown','posterdown','pagedown'), 'packages.bib')
-```
+We can conclude that the **Repair** *(The Percentage Of Roads Needing Repairs)*, **School** *(Child Journeys To School By Walking/Cycling)*, **Train_Stations** *(Number Of Train Stations)*, **Work_Bus** *(Bus Journeys To Work)*, **Work_Train**  *(Train Journeys To Work)* variables have great influence on satisfaction with public transport. 
 
 # References
+
+- Jim Hester and Hadley Wickham, (2020). *fs: Cross-Platform File System Operations Based on 'libuv'.* R package version 1.5.0
+
+- Kuhn et al., (2020). Tidymodels: a collection of packages for modeling and machine learning using tidyverse principles.
+
+- Wickham et al., (2019). *Welcome to the tidyverse. Journal of Open Source Software*, e, 4(43), 1686 

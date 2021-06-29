@@ -19,16 +19,17 @@ Google fonts api stuff
 
 
 
-<title>Generate Reproducible &amp; Live HTML and PDF Conference Posters Using RMarkdown</title>
+<title>Factors influencing Scots’ satisfaction with public transport</title>
 
 <script src="Poster_files/header-attrs-2.7.13/header-attrs.js"></script>
 
 
 
+<link rel="stylesheet" href="css/poster.css" type="text/css" />
 
 <style>
 @page {
-size: 45in 38in;
+size: 45in 33in;
 margin: 0;
 padding: 0;
 }
@@ -36,28 +37,28 @@ body {
 margin: 0;
 font-size: 45px;
 width: 45in;
-height: 38in;
+height: 33in;
 padding: 0;
 text-align: justify;
 font-family: Palatino;
 }
 .poster_wrap {
 width: 45in;
-height: 38in;
+height: 33in;
 padding: 0cm;
 }
 .title_container {
 width: 45in;
-height: calc(38in * 0.15);
+height: calc(33in * 0.10);
 overflow: hidden;
-background-color: #0b4545;
+background-color: #47CCD0;
 border: 0 solid #0b4545;
 }
 .logo_left {
 float: left;
-width: 10%;
+width: 20%;
 height: 100%;
-background-color: #0b4545;
+background-color: #47CCD0;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -66,7 +67,7 @@ justify-content: center;
 float: right;
 width: 10%;
 height: 100%;
-background-color: #0b4545;
+background-color: #47CCD0;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -78,7 +79,7 @@ float: left;
 width: 80%;
 height: 100%;
 color: #FFFFFF;
-top: 50%;
+top: 75%;
 transform: translateY(-50%);
 -webkit-transform: translateY(-50%);
 }
@@ -119,9 +120,9 @@ column-rule-width: 1mm;
 -webkit-column-rule-style: dashed;
 -moz-column-rule-style: dashed;
 column-rule-style: dashed;
--webkit-column-rule-color: #0b4545;
--moz-column-rule-color: #0b4545;
-column-rule-color: #0b4545;
+-webkit-column-rule-color: #47CCD0;
+-moz-column-rule-color: #47CCD0;
+column-rule-color: #47CCD0;
 column-gap: 1em;
 padding-left: 0.5em;
 padding-right: 0.5em;
@@ -137,9 +138,9 @@ font-weight: normal;
 }
 .poster_body_wrap{
 width: calc(45in + 0 + 0);
-height: calc(38in * 0.83);
-padding-top: calc(38in * 0.005);
-padding-bottom: calc(38in * 0.01);
+height: calc(33in * 0.83);
+padding-top: calc(33in * 0.005);
+padding-bottom: calc(33in * 0.01);
 background-color: #ffffff;
 }
 .poster_title h3 {
@@ -161,7 +162,7 @@ border: 0;
 font-weight: normal;
 }
 img {
-margin-top: 2cm;
+margin-top: 0cm;
 margin-bottom: 0;
 }
 .section {
@@ -171,8 +172,8 @@ margin-bottom: 0;
 text-align: center;
 color: #FFFFFF;
 font-size: 65pt;
-border: 2mm solid #0b4545;
-background-color: #0b4545;
+border: 2mm solid #47CCD0;
+background-color: #47CCD0;
 border-radius: 4mm 0mm;
 margin-top: 2mm;
 margin-bottom: 2mm;
@@ -225,7 +226,7 @@ code {
 font-size: 1em;
 font-family: monospace;
 background-color: #00808024;
-color: #0b4545;
+color: #47CCD0;
 padding: 1.2mm;
 border-radius: 2mm;
 }
@@ -283,13 +284,12 @@ font-size: 20pt;
 </div>
 <!-- Poster Title -->
 <div class= "poster_title">
-<h1 id="title">Generate Reproducible &amp; Live HTML and PDF Conference Posters Using RMarkdown</h1>
-<h3 id="author">Brent Thorne<sup>1</sup>, Another G. Author<sup>2</sup></h3><br>
-<h5 id="affiliation"><sup>1</sup> Department of Mathmatics &amp; Statistics, University of Glasgow</h5>
+<h1 id="title"><strong>Factors influencing Scots’ satisfaction with public transport</strong></h1>
+<h3 id="author"><em>Group 28: Aishwin Tikku, Mengran Li, Steven Kwok, Shaoquan Li, Shuning Li</em><sup></sup></h3><br>
+
 </div>
 <!-- Right Logo  -->
 <div class="logo_right">
-<img src=Poster_files/figure-html/UoG_keyline.png style="width: 80%">
 </div>
 </div>
 
@@ -297,75 +297,81 @@ font-size: 20pt;
 <div class='poster_body'>
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
-<p>Welcome to <code>posterdown</code> ! This is my attempt to provide a semi-smooth workflow for those who wish to take their R Markdown skills to the conference world. Most features from R Markdown are available in this package such as Markdown section notation, figure captioning, and even citations like this one <span class="citation">(Allaire et al. 2021)</span>. The rest of this example poster will show how you can insert typical conference poster features into your own document.</p>
-<div id="objectives" class="section level2">
-<h2>Objectives</h2>
-<ol style="list-style-type: decimal">
-<li>Easy to use reproducible poster design.</li>
-<li>Integration with R Markdown.</li>
-<li>Easy transition from <code>posterdown</code> to <code>pagedown</code> report or manuscript documents <span class="citation">(Xie et al. 2020)</span>.</li>
-</ol>
-</div>
+<ul>
+<li><p>We <strong>aim</strong> to find factors related to passengers’ satisfaction with public transport to help operator to improve its service.</p></li>
+<li><p>The <strong>data</strong> are from <a href="https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdef%2Fconcept%2Ffolders%2Fthemes%2Ftransport">Scotland’s official statistics</a>. The theme of Transport contains seven datasets, <a href="https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2Froad-transport-expenditure">Road Transport Expenditure</a>, <a href="https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2Fpublic-transport">Public Transport</a>, <a href="https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2Froad-vehicles">Road Vehicles</a>, <a href="https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2Fconcessionary-cards">Concessionary Travel Cards</a>, <a href="https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2Froad-network-traffic">Road Network and Traffic</a>, <a href="https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2Ftravel-to-work-other">Travel to Work and Other Purposes</a>. There are 460 observations of 24 variables in this research.</p></li>
+</ul>
 </div>
 <div id="methods" class="section level1">
 <h1>Methods</h1>
-<p>This package uses the same workflow approach as the R Markdown you know and love. Basically it goes from RMarkdown &gt; Knitr &gt; Markdown &gt; Pandoc &gt; HTML/CSS &gt; PDF. You can even use the bibliography the same way <span class="citation">(Thorne 2019)</span>.</p>
+<ul>
+<li><p>Summarize table and density plot are illustrated to detect data patterns. The scatter and correlation plots are proposed to explore the relationship among variables. Potential factors are identified through <strong>EDA</strong>.</p></li>
+<li><p>The <em>Satisfaction</em> is the response variable, the <em>DateCode</em> is the control variable and others are independent variables. A <strong>linear regression</strong> model is applied as Eq.(1):\begin{equation}y=\beta_0+\beta_1x_1+\dots+\beta_px_p+\varepsilon \label{eq:(1)} \tag{1} \end{equation}</p></li>
+<li><p><strong>Model diagnosis</strong> are carried out to check model assumptions. <strong>Stepwise regression</strong> is applied to select variable with <strong>AIC</strong> as criterion. Compare the selected model with the full model in <span class="math inline">\(adj\)</span> <span class="math inline">\(R^2\)</span>, AIC and BIC.</p></li>
+<li><p>The uncertainty of the parameters is determined via <strong>bootstrap</strong> method. The significant variables are verified and their 95% CI are estimated.</p></li>
+</ul>
 </div>
 <div id="results" class="section level1">
 <h1>Results</h1>
+<div id="model-diagnosis" class="section level2">
+<h2>Model diagnosis</h2>
+<p><span style="color:#cc0000">Fig.1</span> shows the regression diagnosis results of model1 with all variables.</p>
+<ul>
+<li><p><span style="color:#cc0000">Residuals vs Fitted plot</span> (left top) shows that there is no systematic correlation between the residual value and the fitting value.</p></li>
+<li><p><span style="color:#cc0000">Normal Q-Q plot</span> (right top) shows the points on the graph fall on a straight line with an angle of 45 degrees, which indicates the assumption of normality is not violated.</p></li>
+<li><p><span style="color:#cc0000">Scale-location plot</span> (left bottom) displays the points around the horizontal line are randomly distributed. The invariant variance assumption is satisfied.</p></li>
+<li><p><span style="color:#cc0000">Residuals vs leverage</span> (right bottom) figures out special observations.</p></li>
+<li><p>According to the correlation plot and VIF, there is obvious <strong>multicollinearity</strong> among variables.</p></li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<img src="Poster_files/figure-html/unnamed-chunk-3-1.png" alt="\label{fig:dia} Regression diagnosis results" width="80%" />
+<p class="caption">
+Figure 1:  Regression diagnosis results
+</p>
+</div>
+</div>
+<div id="stepwise-regression" class="section level2">
+<h2>Stepwise regression</h2>
+<p>Stepwise regression technique is applied to model selection. The selected model is as <span style="color:#cc0000">Table. 1</span>.</p>
 <table>
+<caption>
+<span id="tab:unnamed-chunk-4">Table 1: </span>Model2, selected by Stepwise regression
+</caption>
 <thead>
 <tr>
 <th style="text-align:left;">
-Variable
+term
 </th>
 <th style="text-align:right;">
-Mean
+estimate
 </th>
 <th style="text-align:right;">
-SD
+std.error
 </th>
 <th style="text-align:right;">
-min
+statistic
 </th>
 <th style="text-align:right;">
-max
+p.value
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left;">
-Expenditure
+(Intercept)
 </td>
 <td style="text-align:right;">
-25735.16
+49.1373307
 </td>
 <td style="text-align:right;">
-69857.32
+4.0389144
 </td>
 <td style="text-align:right;">
--10844.0
+12.165975
 </td>
 <td style="text-align:right;">
-502630.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Killed_Injured
-</td>
-<td style="text-align:right;">
-124.17
-</td>
-<td style="text-align:right;">
-338.85
-</td>
-<td style="text-align:right;">
-1.0
-</td>
-<td style="text-align:right;">
-2842.00
+0.0000000
 </td>
 </tr>
 <tr>
@@ -373,33 +379,16 @@ Killed_Injured
 Cards
 </td>
 <td style="text-align:right;">
-73852.76
+0.0001125
 </td>
 <td style="text-align:right;">
-207392.71
+0.0000344
 </td>
 <td style="text-align:right;">
-3979.0
+3.269305
 </td>
 <td style="text-align:right;">
-1436617.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Congestion
-</td>
-<td style="text-align:right;">
-10.53
-</td>
-<td style="text-align:right;">
-4.99
-</td>
-<td style="text-align:right;">
-0.0
-</td>
-<td style="text-align:right;">
-23.60
+0.0012981
 </td>
 </tr>
 <tr>
@@ -407,33 +396,16 @@ Congestion
 Repair
 </td>
 <td style="text-align:right;">
-37.10
+0.2415064
 </td>
 <td style="text-align:right;">
-8.20
+0.0629651
 </td>
 <td style="text-align:right;">
-19.5
+3.835558
 </td>
 <td style="text-align:right;">
-62.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Mileage
-</td>
-<td style="text-align:right;">
-2653.78
-</td>
-<td style="text-align:right;">
-7353.99
-</td>
-<td style="text-align:right;">
-131.0
-</td>
-<td style="text-align:right;">
-48714.21
+0.0001747
 </td>
 </tr>
 <tr>
@@ -441,33 +413,16 @@ Mileage
 Work_Bus
 </td>
 <td style="text-align:right;">
-8.64
+0.8573720
 </td>
 <td style="text-align:right;">
-5.64
+0.1037070
 </td>
 <td style="text-align:right;">
-0.0
+8.267251
 </td>
 <td style="text-align:right;">
-28.50
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Business
-</td>
-<td style="text-align:right;">
-2.40
-</td>
-<td style="text-align:right;">
-1.79
-</td>
-<td style="text-align:right;">
-0.0
-</td>
-<td style="text-align:right;">
-14.00
+0.0000000
 </td>
 </tr>
 <tr>
@@ -475,67 +430,16 @@ Business
 School
 </td>
 <td style="text-align:right;">
-51.99
+-0.1186535
 </td>
 <td style="text-align:right;">
-11.86
+0.0456380
 </td>
 <td style="text-align:right;">
-15.8
+-2.599885
 </td>
 <td style="text-align:right;">
-84.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Commuting
-</td>
-<td style="text-align:right;">
-24.25
-</td>
-<td style="text-align:right;">
-4.77
-</td>
-<td style="text-align:right;">
-14.8
-</td>
-<td style="text-align:right;">
-43.60
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Work_Cycling
-</td>
-<td style="text-align:right;">
-1.88
-</td>
-<td style="text-align:right;">
-2.01
-</td>
-<td style="text-align:right;">
-0.0
-</td>
-<td style="text-align:right;">
-11.80
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Education
-</td>
-<td style="text-align:right;">
-4.97
-</td>
-<td style="text-align:right;">
-2.46
-</td>
-<td style="text-align:right;">
-0.6
-</td>
-<td style="text-align:right;">
-12.60
+0.0101222
 </td>
 </tr>
 <tr>
@@ -543,33 +447,16 @@ Education
 Health
 </td>
 <td style="text-align:right;">
-2.32
+0.7652727
 </td>
 <td style="text-align:right;">
-0.94
+0.5091104
 </td>
 <td style="text-align:right;">
-0.0
+1.503157
 </td>
 <td style="text-align:right;">
-5.70
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Shopping
-</td>
-<td style="text-align:right;">
-22.66
-</td>
-<td style="text-align:right;">
-3.70
-</td>
-<td style="text-align:right;">
-12.0
-</td>
-<td style="text-align:right;">
-35.10
+0.1346011
 </td>
 </tr>
 <tr>
@@ -577,33 +464,16 @@ Shopping
 Work_Train
 </td>
 <td style="text-align:right;">
-4.01
+0.8083991
 </td>
 <td style="text-align:right;">
-3.90
+0.1270588
 </td>
 <td style="text-align:right;">
-0.0
+6.362402
 </td>
 <td style="text-align:right;">
-19.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Work_Walking
-</td>
-<td style="text-align:right;">
-12.22
-</td>
-<td style="text-align:right;">
-5.54
-</td>
-<td style="text-align:right;">
-0.5
-</td>
-<td style="text-align:right;">
-29.00
+0.0000000
 </td>
 </tr>
 <tr>
@@ -611,67 +481,16 @@ Work_Walking
 Train_Stations
 </td>
 <td style="text-align:right;">
-20.42
+-0.1437217
 </td>
 <td style="text-align:right;">
-57.62
+0.0439176
 </td>
 <td style="text-align:right;">
-0.0
+-3.272534
 </td>
 <td style="text-align:right;">
-357.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Satisfaction
-</td>
-<td style="text-align:right;">
-69.56
-</td>
-<td style="text-align:right;">
-10.28
-</td>
-<td style="text-align:right;">
-35.0
-</td>
-<td style="text-align:right;">
-93.00
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-One_Car
-</td>
-<td style="text-align:right;">
-43.96
-</td>
-<td style="text-align:right;">
-3.80
-</td>
-<td style="text-align:right;">
-33.3
-</td>
-<td style="text-align:right;">
-53.50
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-More_Car
-</td>
-<td style="text-align:right;">
-29.79
-</td>
-<td style="text-align:right;">
-7.35
-</td>
-<td style="text-align:right;">
-10.8
-</td>
-<td style="text-align:right;">
-50.30
+0.0012842
 </td>
 </tr>
 <tr>
@@ -679,16 +498,16 @@ More_Car
 Without_Car
 </td>
 <td style="text-align:right;">
-26.21
+0.1023895
 </td>
 <td style="text-align:right;">
-8.50
+0.0713492
 </td>
 <td style="text-align:right;">
-8.7
+1.435047
 </td>
 <td style="text-align:right;">
-52.20
+0.1530586
 </td>
 </tr>
 <tr>
@@ -696,22 +515,28 @@ Without_Car
 Petrol_Diesel
 </td>
 <td style="text-align:right;">
-181.39
+-0.0309497
 </td>
 <td style="text-align:right;">
-501.18
+0.0142438
 </td>
 <td style="text-align:right;">
-8.0
+-2.172855
 </td>
 <td style="text-align:right;">
-3331.00
+0.0311356
 </td>
 </tr>
 </tbody>
 </table>
-<p><img src="Poster_files/figure-html/unnamed-chunk-3-1.png" width="100%" /></p>
+<p>The variables with high correlation are removed by stepwise regression.</p>
+</div>
+<div id="model-compare" class="section level2">
+<h2>Model compare</h2>
 <table>
+<caption>
+<span id="tab:unnamed-chunk-5">Table 2: </span>Compare selected model by Stepwise regression with the full model
+</caption>
 <thead>
 <tr>
 <th style="text-align:left;">
@@ -759,35 +584,50 @@ model 2
 </tr>
 </tbody>
 </table>
-<p><img src="Poster_files/figure-html/unnamed-chunk-5-1.png" width="100%" /></p>
+<p>The model2 has higher <span class="math inline">\(adj\)</span> <span class="math inline">\(R^2\)</span> and smaller AIC and BIC compared with the model1 as <span style="color:#cc0000">Table. 2</span>. Therefore the <strong>model2</strong> is better.</p>
 </div>
-<div id="next-steps" class="section level1">
-<h1>Next Steps</h1>
-<p>Aliquam sed faucibus risus, quis efficitur erat. Vestibulum semper mauris quis tempus eleifend. Aliquam sagittis dictum ipsum, quis viverra ligula eleifend ut. Curabitur sagittis vitae arcu eget faucibus. In non elementum felis. Duis et aliquam nunc. Nunc pulvinar sapien nunc, vel pretium nisi efficitur in. Fusce fringilla maximus leo et maximus. Fusce at ligula laoreet, iaculis mi at, auctor odio. Praesent sed elementum justo. Aenean consectetur risus rhoncus tincidunt efficitur. Praesent dictum mauris at diam maximus maximus <span class="citation">(Thorne 2019)</span>.</p>
+<div id="bootstrap" class="section level2">
+<h2>Bootstrap</h2>
+<p>To obtain robust results, bootstrap is developed to the estimation of parameters.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
+<img src="Poster_files/figure-html/unnamed-chunk-6-1.png" alt="Density plots of parameters via bootstrap" width="80%" />
+<p class="caption">
+Figure 2: Density plots of parameters via bootstrap
+</p>
+</div>
+<p>The density plots of parameters are displayed in <span style="color:#cc0000">Fig.3</span>. The variables with orange are not significant while the variables with blue are significant at the <span class="math inline">\(\alpha=0.05\)</span>. The blue dashed lines are zero and the orange dashed lines are 95% CI of parameters.</p>
+</div>
 </div>
 <div id="conclusion" class="section level1">
 <h1>Conclusion</h1>
-<p>Try <code>posterdown</code> out! Hopefully you like it!</p>
+<p>We can conclude that the <strong>Repair</strong> <em>(The Percentage Of Roads Needing Repairs)</em>, <strong>School</strong> <em>(Child Journeys To School By Walking/Cycling)</em>, <strong>Train_Stations</strong> <em>(Number Of Train Stations)</em>, <strong>Work_Bus</strong> <em>(Bus Journeys To Work)</em>, <strong>Work_Train</strong> <em>(Train Journeys To Work)</em> variables have great influence on satisfaction with public transport.</p>
 </div>
-<div id="references" class="section level1 unnumbered">
+<div id="references" class="section level1">
 <h1>References</h1>
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-R-rmarkdown" class="csl-entry">
-Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2021. <em>Rmarkdown: Dynamic Documents for r</em>.
-</div>
-<div id="ref-R-posterdown" class="csl-entry">
-Thorne, Brent. 2019. <em>Posterdown: Generate PDF Conference Posters Using r Markdown</em>. <a href="https://github.com/brentthorne/posterdown">https://github.com/brentthorne/posterdown</a>.
-</div>
-<div id="ref-R-pagedown" class="csl-entry">
-Xie, Yihui, Romain Lesur, Brent Thorne, and Xianying Tan. 2020. <em>Pagedown: Paginate the HTML Output of r Markdown with CSS for Print</em>. <a href="https://github.com/rstudio/pagedown">https://github.com/rstudio/pagedown</a>.
-</div>
-</div>
+<ul>
+<li><p>Jim Hester and Hadley Wickham, (2020). <em>fs: Cross-Platform File System Operations Based on ‘libuv.’</em> R package version 1.5.0</p></li>
+<li><p>Kuhn et al., (2020). Tidymodels: a collection of packages for modeling and machine learning using tidyverse principles.</p></li>
+<li><p>Wickham et al., (2019). <em>Welcome to the tidyverse. Journal of Open Source Software</em>, e, 4(43), 1686</p></li>
+</ul>
 </div>
 </div>
 </div>
 
 </div>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+var script = document.createElement("script");
+script.type = "text/javascript";
+var src = "true";
+if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+if (location.protocol !== "file:" && /^https?:/.test(src))
+src = src.replace(/^https?:/, '');
+script.src = src;
+document.getElementsByTagName("head")[0].appendChild(script);
+})();
+</script>
 
 
 </body>
