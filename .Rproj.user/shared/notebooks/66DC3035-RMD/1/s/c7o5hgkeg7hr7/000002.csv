@@ -1,0 +1,5 @@
+"0","my_skim <- skim_with()"
+"0","my_skim(Data[, -c(1,2)])  %>%"
+"0","  select(c(skim_variable, numeric.mean, numeric.sd, numeric.p0, numeric.p100)) %>%"
+"0","  mutate(numeric.mean = round(numeric.mean,2), numeric.sd = round(numeric.sd,2)) %>%"
+"0","  kable(col.names = c(""Variable"", ""Mean"", ""SD"", ""min"", ""max""))"
