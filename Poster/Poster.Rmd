@@ -10,12 +10,13 @@ output:
     css: ["css/poster.css"]
 bibliography: packages.bib
 primary_colour: "#47CCD0"
-poster_height: "33in"
+poster_height: "32in"
 knit: pagedown::chrome_print
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+options(scipen = 1, digits = 2)
 ```
 
 ```{r}
@@ -88,21 +89,23 @@ tidy(fit2) %>%
 
 The variables with high correlation are removed by stepwise regression.
 
-## Model compare
+## Model comparison
+
+Model2 has higher $adj$ $R^2$ and smaller AIC and BIC compared with the model1 as [Table. 2]{style="color:#cc0000"}. 
 
 ```{r}
 glance(fit) %>% 
   full_join(glance(fit2)) %>%
   select(adj.r.squared, AIC, BIC) %>% 
   add_column(model = c("model 1", "model 2"), .before = "adj.r.squared") %>%
-  kable(caption = 'Compare selected model by Stepwise regression with the full model')
+  kable(caption = 'Comparison of model1 with model2 on adj R2, AIC and BIC')
 ```
 
-Model2 has higher $adj$ $R^2$ and smaller AIC and BIC compared with the model1 as [Table. 2]{style="color:#cc0000"}. Therefore the **model2** is better.
+Therefore the **model2** is better.
 
 ## Bootstrap
 
-To obtain robust results, a bootstrap is developed for the estimation of parameters.
+To obtain robust results, a bootstrap is developed for the estimation of parameters. This process is repeated **1000** times.
 
 ```{r, out.width='80%', fig.cap="Density plots of parameters via bootstrap", fig.height = 5, fig.align='center'}
 boot_models <- bootstraps(Data[, -c(1, 3, 4, 8)], times = 1000, apparent = TRUE) %>%
@@ -122,7 +125,7 @@ sig <- ci[sign(ci[, 2]) == sign(ci[, 4]), ] %>% pull(term)
 
 boot_coefs <-  boot_coefs %>%
   mutate(sig = ifelse(term %in% sig, "TRUE", "FALSE")) %>%
-  filter(term %in% c("Health", "Petrol_Diesel","Repair", "School", "Train_Stations", "Without_Car", "Work_Bus", "Work_Train"))
+  filter(term %in% c("Cards", "Health", "Petrol_Diesel","Repair", "School", "Train_Stations", "Without_Car", "Work_Bus", "Work_Train"))
 
 boot_coefs2 <- boot_coefs %>%
   group_by(term) %>%
@@ -142,12 +145,14 @@ The density plots of parameters are displayed in [Fig.3]{style="color:#cc0000"}.
 
 # Conclusion
 
-We can conclude that the **Repair** *(The Percentage Of Roads Needing Repairs)*, **School** *(Child Journeys To School By Walking/Cycling)*, **Train_Stations** *(Number Of Train Stations)*, **Work_Bus** *(Bus Journeys To Work)*, **Work_Train**  *(Train Journeys To Work)* variables have great influence on satisfaction with public transport. 
+- The variables **Cards** *(Number of concessionary cards issued to all adults)*, **Repair** *(The Percentage of Roads Needing Repairs)*, **Work_Bus** *(Bus Journeys To Work)* and **Work_Train**  *(Train Journeys To Work)* have [**positive**]{style="color:#cc0000"} influence on satisfaction with public transport. The **School** *(Child Journeys To School By Walking/Cycling)* and **Train_Stations** *(Number of Train Stations)* have [**negative**]{style="color:#cc0000"} relationship with satisfaction with public transport.
+
+- The reason that more roads needing repairs and less train stations come with higher satisfaction needs to be further explored.
 
 # References
 
 - Jim Hester and Hadley Wickham, (2020). *fs: Cross-Platform File System Operations Based on 'libuv'.* R package version 1.5.0
 
-- Kuhn et al., (2020). Tidymodels: a collection of packages for modeling and machine learning using tidyverse principles.
+- Kuhn et al., (2020). *Tidymodels: a collection of packages for modeling and machine learning using tidyverse principles*.
 
 - Wickham et al., (2019). *Welcome to the tidyverse. Journal of Open Source Software*, e, 4(43), 1686 

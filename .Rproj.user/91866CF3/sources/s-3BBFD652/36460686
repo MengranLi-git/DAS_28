@@ -3,7 +3,7 @@
     "path": "F://DAS_28/Poster/css/poster.css",
     "project_path": "Poster/css/poster.css",
     "type": "css",
-    "hash": "2192991190",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1624999605820.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "5,16",
+        "cursorPosition": "0,2",
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1625046251,
+    "lastKnownWriteTime": 1625047959,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1625046251366,
+    "last_content_update": 1625047959656,
     "read_only": false,
     "read_only_alternatives": []
 }
