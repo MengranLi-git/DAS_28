@@ -41,9 +41,9 @@ load("../Data.Rdata")
 
 -   Summarize table and density plots are illustrated to detect data patterns. The scatter and correlation plots are proposed to explore the relationship among variables. Potential factors are identified through **EDA**.
 
--   The *Satisfaction* is the response variable, the *DateCode* is the control variable and others are independent variables. A **linear regression** model is applied as Eq.(1):\\begin{equation}y=\\beta_0+\\beta_1x_1+\\dots+\\beta_px_p+\\varepsilon \\label{eq:(1)} \\tag{1} \\end{equation}
+-   The *Satisfaction* is the response variable, the *DateCode* is the control variable and others are independent variables. A **linear regression** model is applied as [Eq.(1)]{style="color:#cc0000"}:\\begin{equation}y=\\beta_0+\\beta_1x_1+\\dots+\\beta_px_p+\\varepsilon \\label{eq:(1)} \\tag{1} \\end{equation}
 
--   **Model diagnosis** are carried out to check model assumptions. **Stepwise regression** is applied to select variable with **AIC** as criterion. Compare the selected model with the full model in $adj$ $R^2$, AIC and BIC.
+-   **Model diagnosis** are carried out to check model assumptions. **Stepwise regression** is applied to select variables with **AIC** as the criterion. Compare the selected model with the full model in $adj$ $R^2$, AIC and BIC.
 
 -   The uncertainty of the parameters is determined via **bootstrap** method. The significant variables are verified and their 95% CI are estimated.
 
@@ -98,11 +98,11 @@ glance(fit) %>%
   kable(caption = 'Compare selected model by Stepwise regression with the full model')
 ```
 
-The model2 has higher $adj$ $R^2$ and smaller AIC and BIC compared with the model1 as [Table. 2]{style="color:#cc0000"}. Therefore the **model2** is better.
+Model2 has higher $adj$ $R^2$ and smaller AIC and BIC compared with the model1 as [Table. 2]{style="color:#cc0000"}. Therefore the **model2** is better.
 
 ## Bootstrap
 
-To obtain robust results, bootstrap is developed to the estimation of parameters.
+To obtain robust results, a bootstrap is developed for the estimation of parameters.
 
 ```{r, out.width='80%', fig.cap="Density plots of parameters via bootstrap", fig.height = 5, fig.align='center'}
 boot_models <- bootstraps(Data[, -c(1, 3, 4, 8)], times = 1000, apparent = TRUE) %>%

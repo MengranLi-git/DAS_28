@@ -306,8 +306,8 @@ font-size: 20pt;
 <h1>Methods</h1>
 <ul>
 <li><p>Summarize table and density plots are illustrated to detect data patterns. The scatter and correlation plots are proposed to explore the relationship among variables. Potential factors are identified through <strong>EDA</strong>.</p></li>
-<li><p>The <em>Satisfaction</em> is the response variable, the <em>DateCode</em> is the control variable and others are independent variables. A <strong>linear regression</strong> model is applied as Eq.(1):\begin{equation}y=\beta_0+\beta_1x_1+\dots+\beta_px_p+\varepsilon \label{eq:(1)} \tag{1} \end{equation}</p></li>
-<li><p><strong>Model diagnosis</strong> are carried out to check model assumptions. <strong>Stepwise regression</strong> is applied to select variable with <strong>AIC</strong> as criterion. Compare the selected model with the full model in <span class="math inline">\(adj\)</span> <span class="math inline">\(R^2\)</span>, AIC and BIC.</p></li>
+<li><p>The <em>Satisfaction</em> is the response variable, the <em>DateCode</em> is the control variable and others are independent variables. A <strong>linear regression</strong> model is applied as <span style="color:#cc0000">Eq.(1)</span>:\begin{equation}y=\beta_0+\beta_1x_1+\dots+\beta_px_p+\varepsilon \label{eq:(1)} \tag{1} \end{equation}</p></li>
+<li><p><strong>Model diagnosis</strong> are carried out to check model assumptions. <strong>Stepwise regression</strong> is applied to select variables with <strong>AIC</strong> as the criterion. Compare the selected model with the full model in <span class="math inline">\(adj\)</span> <span class="math inline">\(R^2\)</span>, AIC and BIC.</p></li>
 <li><p>The uncertainty of the parameters is determined via <strong>bootstrap</strong> method. The significant variables are verified and their 95% CI are estimated.</p></li>
 </ul>
 </div>
@@ -584,11 +584,11 @@ model 2
 </tr>
 </tbody>
 </table>
-<p>The model2 has higher <span class="math inline">\(adj\)</span> <span class="math inline">\(R^2\)</span> and smaller AIC and BIC compared with the model1 as <span style="color:#cc0000">Table. 2</span>. Therefore the <strong>model2</strong> is better.</p>
+<p>Model2 has higher <span class="math inline">\(adj\)</span> <span class="math inline">\(R^2\)</span> and smaller AIC and BIC compared with the model1 as <span style="color:#cc0000">Table. 2</span>. Therefore the <strong>model2</strong> is better.</p>
 </div>
 <div id="bootstrap" class="section level2">
 <h2>Bootstrap</h2>
-<p>To obtain robust results, bootstrap is developed to the estimation of parameters.</p>
+<p>To obtain robust results, a bootstrap is developed for the estimation of parameters.</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
 <img src="Poster_files/figure-html/unnamed-chunk-6-1.png" alt="Density plots of parameters via bootstrap" width="80%" />
 <p class="caption">
