@@ -3,7 +3,7 @@
     "path": "F://DAS_28/Poster/Poster.Rmd",
     "project_path": "Poster/Poster.Rmd",
     "type": "r_markdown",
-    "hash": "2393632333",
+    "hash": "463129113",
     "contents": "",
     "dirty": false,
     "created": 1624828660871.0,
@@ -12,7 +12,7 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "43,177",
+        "cursorPosition": "41,37",
         "scrollLine": "38",
         "last_setup_crc32": "",
         "rmdVisualMode": "false",
@@ -21,11 +21,11 @@
         "rmdVisualModeLocation": "5129:4180"
     },
     "folds": "",
-    "lastKnownWriteTime": 1625009255,
+    "lastKnownWriteTime": 1625045675,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1625009255027,
+    "last_content_update": 1625045675556,
     "read_only": false,
     "read_only_alternatives": []
 }

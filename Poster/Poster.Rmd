@@ -39,7 +39,7 @@ load("../Data.Rdata")
 
 # Methods
 
--   Summarize table and density plot are illustrated to detect data patterns. The scatter and correlation plots are proposed to explore the relationship among variables. Potential factors are identified through **EDA**.
+-   Summarize table and density plots are illustrated to detect data patterns. The scatter and correlation plots are proposed to explore the relationship among variables. Potential factors are identified through **EDA**.
 
 -   The *Satisfaction* is the response variable, the *DateCode* is the control variable and others are independent variables. A **linear regression** model is applied as Eq.(1):\\begin{equation}y=\\beta_0+\\beta_1x_1+\\dots+\\beta_px_p+\\varepsilon \\label{eq:(1)} \\tag{1} \\end{equation}
 
