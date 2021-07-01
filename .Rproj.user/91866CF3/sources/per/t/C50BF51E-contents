@@ -1,5 +1,4 @@
 library(tidyverse)
-library(fs)
 library(tidymodels)
 library(GGally)
 library(car)
@@ -109,6 +108,15 @@ names(Data) <- c(
   "Health", "Shopping", "Work_Train", "Work_Walking", "Train_Stations",
   "Satisfaction", "One_Car", "More_Car", "Without_Car", "Petrol_Diesel"
 )
+
+test <- Data %>% gather(key = variable, value = value, - c(FeatureCode, DateCode)) %>%
+  
+write.table(x=test, file = "Group_28.csv",sep = ",")
+
+Data <- read.csv("data/Group_28.csv")
+
+Data <- Data %>% spread(variable, value)
+
 glimpse(Data)
 # Transform the DateCode as a factor
 Data$DateCode <- as.factor(Data$DateCode)
