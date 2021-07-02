@@ -262,9 +262,6 @@ glance(fit)
 glance(fit2)
 ```
 
-A total of four regressions were performed. First, all the independent variables were regressed, and then the highly correlated factors were sequentially removed, and finally, four models were obtained. The variables with high correlation are removed by stepwise regression. Step AIC method is applied as a criterion for model selection. The model 2 is the best choice.
-Stepwise regression technique is applied to model selection. The selected model is as Table. \ref{tab:model2}. Control variable "DateCode" isn't displayed.
-
 ```{r}
 fit2 <- lm(Satisfaction ~ Cards + Repair + Work_Bus + 
              School + Health + Work_Train + Train_Stations + Without_Car + 
@@ -274,6 +271,9 @@ tidy(fit2) %>%
                      "DateCode2016","DateCode2017","DateCode2018")) %>%
   kable(caption = 'Model2, selected by Stepwise regression\\label{tab:model2}')
 ```
+
+A total of four regressions were performed. First, all the independent variables were regressed, and then the highly correlated factors were sequentially removed, and finally, four models were obtained. The variables with high correlation are removed by stepwise regression. Step AIC method is applied as a criterion for model selection. The model 2 is the best choice.
+Stepwise regression technique is applied to model selection. The selected model is as Table. \ref{tab:model2}. Control variable "DateCode" isn't displayed.
 
 Model diagnosis are carried out to check model assumptions. Stepwise regression is applied to select variables with AIC as the criterion. Compare the selected model with full model on $adj$ $R^2$, AIC and BIC.
 Model2 has higher $adj$ $R^2$ and smaller AIC and BIC compared with the model1 as Table. \ref{tab:com}.
