@@ -1,0 +1,5 @@
+"0","glance(fit) %>% "
+"0","  full_join(glance(fit2)) %>%"
+"0","  dplyr::select(., c(adj.r.squared, AIC, BIC)) %>% "
+"0","  add_column(model = c(""model 1"", ""model 2""), .before = ""adj.r.squared"") %>%"
+"0","  kable(caption = 'Table.2: Comparison of model1 with model2 on adj R2, AIC and BIC')"

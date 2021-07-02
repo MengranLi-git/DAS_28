@@ -75,7 +75,7 @@ plot(fit)
 
 ## Stepwise regression
 
-Stepwise regression technique is applied to model selection. The selected model is as [Table. 1]{style="color:#cc0000"}. 
+Stepwise regression technique is applied to model selection. The selected model is as [Table. 1]{style="color:#cc0000"}. Control variable isn't displayed.
 
 ```{r}
 fit2 <- lm(Satisfaction ~ DateCode + Cards + Repair + Work_Bus + 
@@ -141,7 +141,7 @@ boot_coefs %>%
   facet_wrap(~term, scales = "free")
 ```
 
-The density plots of parameters are displayed in [Fig.3]{style="color:#cc0000"}. The variables with orange are not significant while the variables with blue are significant at the $\alpha=0.05$. The blue dashed lines are zero and the orange dashed lines are 95% CI of parameters.
+The density plots of parameters are displayed in [Fig.2]{style="color:#cc0000"}. The variables with orange are not significant while the variables with blue are significant at the $\alpha=0.05$. The blue dashed lines are zero and the orange dashed lines are 95% CI of parameters.
 
 # Conclusion
 

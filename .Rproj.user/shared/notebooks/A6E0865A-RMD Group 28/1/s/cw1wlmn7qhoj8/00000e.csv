@@ -1,0 +1,8 @@
+"0","# density plot"
+"0","Data[, -c(1, 2)] %>%"
+"0","  gather(key = ""variable"", value = ""value"") %>%"
+"0","  ggplot() +"
+"0","  geom_histogram(aes(x=value), fill=""#80C687"", color=""#80C687"", alpha=0.8) +"
+"0","  facet_wrap(~variable, scales = ""free"") + "
+"0","  theme(axis.text.x= element_text(size = 4),"
+"0","        axis.text.y= element_text(size = 4))"

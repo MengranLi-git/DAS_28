@@ -1,0 +1,3 @@
+"0","Data <- read.csv(""data/Group_28.csv"")"
+"0","Data <- Data %>% spread(variable, value)"
+"0","Data$DateCode <- as.factor(Data$DateCode)"

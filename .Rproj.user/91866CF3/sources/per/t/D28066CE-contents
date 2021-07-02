@@ -1,0 +1,119 @@
+---
+title: "Example Report"
+author: "Data Analysis Skills Week 3"
+output:  
+  pdf_document:
+          number_sections: yes
+fig_caption: yes
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, comment = NA, message = FALSE, warning = FALSE, eval=FALSE)
+```
+
+```{r, eval = TRUE}
+library(ggplot2)
+library(dplyr)
+library(moderndive)
+library(gapminder)
+library(skimr)
+library(kableExtra)
+library(gridExtra)
+```
+
+# Introduction {#sec:intro}
+
+Student feedback is an essential source for evaluating teaching in higher education. Feedback can lead to the improvement of teaching approaches and the materials presented. However, studies into student feedback have suggested potential bias factors in the feedback given. Here, we shall examine data from a study into student feedback on professors from The University of Texas at Austin, where the students also provided information on the physical appearance of the teacher. Hence, the relationship between teaching scores and the attractiveness of the teacher will be examined.
+
+Section \ref{sec:eda} consists of an exploratory data analysis of teaching evaluation scores and explores the potential relationship between teaching scores and the perceived attractiveness of the teacher. Section \ref{sec:fda} contains the results from fitting a linear regression model to the data, as well as the assessment of the model assumptions. Concluding remarks are given in Section \ref{sec:con}.
+
+# Exploratory data analysis {#sec:eda}
+
+```{r, eval = TRUE}
+evals.scores <- evals %>%
+  dplyr::select(score, bty_avg)
+```
+
+Table \ref{tab:summary} contains summary statistics on the teaching and beauty scores of the `r nrow(evals.scores)` teaching instructors from the University of Texas at Austin. First, if we look at teaching score, which is an average of the average teaching scores based on students’ evaluations on a scale between 1 and 5, we see that the middle 50% of teaching scores lie between `r round(quantile(evals.scores$score, 0.25), 2)` and `r round(quantile(evals.scores$score, 0.75), 2)`, with an average teaching score of `r round(mean(evals.scores$score), 2)`. Secondly, if we look at the beauty score of the instructors, which is an average of the beauty scores from a panel of six students’ scores on a scale between 1 and 10, we see that the middle 50% lies between `r round(quantile(evals.scores$bty_avg, 0.25), 2)` and `r round(quantile(evals.scores$bty_avg, 0.75), 2)`, with an average beauty score of `r round(mean(evals.scores$bty_avg), 2)`. There is also more variability in beauty scores, as seen from the standard deviation (SD), however, this may well be due to it being on a larger scale than the teaching scores (1 to 10 vs.\ 1 to 5).
+
+```{r, eval = TRUE}
+my_skim <- skim_with(numeric = sfl(hist = NULL))
+my_skim(evals.scores)  %>%
+  dplyr::select(-skim_type) %>%
+  kable(col.names = c("Variable", "Missing", "Complete", "Mean", "SD", "Min.", "1st Q.", "Median","3rd Q.", "Max."),
+        caption = '\\label{tab:summary} Summary statistics on teaching and beauty scores.',
+        booktabs = TRUE, format = "latex", digits = 2) %>%
+  kable_styling(font_size = 10, latex_options = "hold_position")
+```
+
+
+```{r, eval = TRUE}
+Cor.scores <- evals.scores %>%
+  get_correlation(formula = score ~ bty_avg)
+```
+
+Figure \ref{fig:scat} displays a scatterplot of the teaching score against beauty score. Here, there appears to be a positive relationship between teaching and beauty scores. Hence, teaching score tends to increase with beauty score. However, as seen from Figure \ref{fig:scat} and the observed correlation coefficient (`r round(Cor.scores, 3)`), it is only a weakly positive relationship. A linear regression model will now be fitted to assess the relationship between teaching and beauty scores.
+
+```{r, eval = TRUE, out.width = '80%', fig.align = "center", fig.cap = "\\label{fig:scat} Relationship between teaching and beauty scores. The best-fitting line has been superimposed.", fig.pos = "H"}
+ggplot(evals.scores, aes(x = bty_avg, y = score)) +
+  geom_point() +
+  labs(x = "Beauty Score", y = "Teaching Score") +
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+# Formal data analysis {#sec:fda}
+
+The linear regression model that will be fitted to the data is as follows:
+
+$$y_i = \alpha + \beta x_i + \epsilon_i, ~~~~ \epsilon_i \sim N(0, \sigma^2),$$
+
+where $y_i$ and $x_i$ denote the **teaching score** and **beauty score** of the $i^{th}$ teaching instructor, respectively. The intercept of the linear regression line is denoted by $\alpha$, while the slope is given by $\beta$. The $i^{th}$ random error component is denoted by $\epsilon_i$, which are normally distributed with mean zero and variance $\sigma^2$.
+
+```{r, eval = TRUE}
+model <- lm(score ~ bty_avg, data = evals.scores)
+Coefs <- round(coef(model), 3)
+```
+
+Table \ref{tab:reg} displays the estimated intercept and slope parameters of the best-fitting line from the regression model. Hence, the best-fitting line is given as:
+
+$$\widehat{\mbox{teaching score}} = `r Coefs[1]` + `r Coefs[2]` \cdot \mbox{beauty score}.$$
+That is, for every one unit increase in beauty score, there is an associated increase in teaching score of, on average, `r Coefs[2]`. This agrees with the exploratory analysis carried out in Section \ref{sec:eda}, that is, the relationship between teaching scores and beauty scores is positive, if only weakly positive. Before concluding, the assumptions corresponding to the linear regression model need to assessed.
+
+```{r, eval = TRUE}
+get_regression_table(model)[, 1:2] %>%
+  kable(caption = '\\label{tab:reg} Estimates of the intercept and slope from the fitted linear regression model.',
+        booktabs = TRUE, format = "latex") %>%
+  kable_styling(latex_options = 'HOLD_position')
+```
+
+```{r, eval = TRUE}
+regression.points <- get_regression_points(model)
+```
+
+Figure \ref{fig:resids} shows scatterplots of the residuals against the explanatory variable beauty score, as well as the fitted values. Here we can see that there is no obvious pattern in the residuals, which appear to be evenly scattered above and below the zero line, and hence have mean zero. Also, the spread of the residuals is constant across all values of the explanatory variable and fitted values, and as such display no obvious change in variability. Hence, the random error component of the regression model satisfies the assumptions of having mean zero and constant variance. Now we need to examine whether they are normally distributed.
+
+```{r, eval = TRUE, fig.width = 13, fig.align = "center", fig.cap = "\\label{fig:resids} Scatterplots of the residuals against beauty score (left) and the fitted values (right).", fig.pos = "H"}
+p1 <- ggplot(regression.points, aes(x = bty_avg, y = residual)) +
+      geom_point() +
+      labs(x = "Beauty score", y = "Residual") +
+      geom_hline(yintercept = 0, col = "blue", size = 1) 
+
+p2 <- ggplot(regression.points, aes(x = score_hat, y = residual)) +
+      geom_point() +
+      labs(x = "Fitted values", y = "Residual") +
+      geom_hline(yintercept = 0, col = "blue", size = 1) 
+
+grid.arrange(p1, p2, ncol = 2)
+```
+
+Figure \ref{fig:residhist} displays a histogram of the residuals. Here, the histogram appears to be slightly left-skewed, however, it appears to be relatively bell-shaped and centred around zero. Hence, the assumption of normally distributed errors appears to hold for the fitted regression model.
+
+```{r, eval = TRUE, out.width = '75%', fig.align = "center", fig.cap = "\\label{fig:residhist} Histogram of the residuals.", fig.pos = "H"}
+ggplot(regression.points, aes(x = residual)) +
+      geom_histogram(color = "white") +
+      labs(x = "Residual") 
+```
+
+# Conclusions {#sec:con}
+
+The student feedback on professors from the University of Texas at Austin suggests that there may be potential for bias factors, such as the attractiveness of the teacher, when it comes to providing feedback. This is observed from the fitted regression model, where teaching score was found to increase with increasing beauty score. However, the relationship observed is only weakly positive (correlation coefficient of `r round(Cor.scores, 3)`), with an associated increase in teaching score of, on average, `r Coefs[2]`, with every one unit increase in beauty score.

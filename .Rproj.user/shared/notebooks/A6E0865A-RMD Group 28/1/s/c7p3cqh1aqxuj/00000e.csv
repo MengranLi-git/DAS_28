@@ -1,0 +1,11 @@
+"0","fit2 <- lm(Satisfaction ~ Cards + Repair + Work_Bus + "
+"0","             School + Health + Work_Train + Train_Stations + Without_Car + "
+"0","             Petrol_Diesel, data = na.omit(Data[, -1]))"
+"0","tidy(fit2) %>% "
+"0","  filter(!term %in% c(""DateCode2012"",""DateCode2014"",""DateCode2015"","
+"0","                     ""DateCode2016"",""DateCode2017"",""DateCode2018"")) %>%"
+"0","  add_row(term = ""DateCode"", estimate = ""-"", std.error = ""-"", statistic = ""-"", p.value = ""-"") %>%"
+"0","  kable(caption = 'Model2, selected by Stepwise regression\\label{tab:model2}')"
+"2","Error: Can't combine `..1$estimate` <double> and `..2$estimate` <character>.
+[90mRun `rlang::last_error()` to see where the error occurred.[39m
+"
