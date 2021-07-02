@@ -262,7 +262,7 @@ glance(fit)
 glance(fit2)
 ```
 
-A total of four regressions were performed. First, all the independent variables were regressed, and then the highly correlated factors were sequentially removed, and finally, four models were obtained. The variables with high correlation are removed by stepwise regression. Step AIC method is applied as a criterion for model selection. model 2 is the best choice.
+A total of four regressions were performed. First, all the independent variables were regressed, and then the highly correlated factors were sequentially removed, and finally, four models were obtained. The variables with high correlation are removed by stepwise regression. Step AIC method is applied as a criterion for model selection. The model 2 is the best choice.
 Stepwise regression technique is applied to model selection. The selected model is as Table. \ref{tab:model2}. Control variable "DateCode" isn't displayed.
 
 ```{r}
@@ -290,7 +290,7 @@ Therefore the model2 is better.
 
 To obtain robust results, using Bootstrap to select significant variables at 95% level and obtain its confidence interval of parameter estimation and their observations.This process should be repeated 1000 times.
 
-```{r, out.width='80%', fig.cap="Density plots of parameters via bootstrap\\label{fig:boot}", fig.height = 5, fig.align='center'}
+```{r, echo = TRUE, eval = TRUE, warning = FALSE, message = FALSE,out.width='80%', fig.cap="Density plots of parameters via bootstrap\\label{fig:boot}", fig.height = 5, fig.align='center'}
 boot_models <- bootstraps(Data[, -1], times = 1000, apparent = TRUE) %>%
   mutate(
     model = map(splits, ~ lm(Satisfaction ~ DateCode + Cards + Repair + Work_Bus + 

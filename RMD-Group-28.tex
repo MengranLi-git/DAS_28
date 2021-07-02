@@ -380,8 +380,8 @@ A total of four regressions were performed. First, all the independent
 variables were regressed, and then the highly correlated factors were
 sequentially removed, and finally, four models were obtained. The
 variables with high correlation are removed by stepwise regression. Step
-AIC method is applied as a criterion for model selection. model 2 is the
-best choice. Stepwise regression technique is applied to model
+AIC method is applied as a criterion for model selection. The model 2 is
+the best choice. Stepwise regression technique is applied to model
 selection. The selected model is as Table. \ref{tab:model2}. Control
 variable ``DateCode'' isn't displayed.
 
@@ -443,6 +443,44 @@ To obtain robust results, using Bootstrap to select significant
 variables at 95\% level and obtain its confidence interval of parameter
 estimation and their observations.This process should be repeated 1000
 times.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{boot\_models }\OtherTok{\textless{}{-}} \FunctionTok{bootstraps}\NormalTok{(Data[, }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{], }\AttributeTok{times =} \DecValTok{1000}\NormalTok{, }\AttributeTok{apparent =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}
+    \AttributeTok{model =} \FunctionTok{map}\NormalTok{(splits, }\SpecialCharTok{\textasciitilde{}} \FunctionTok{lm}\NormalTok{(Satisfaction }\SpecialCharTok{\textasciitilde{}}\NormalTok{ DateCode }\SpecialCharTok{+}\NormalTok{ Cards }\SpecialCharTok{+}\NormalTok{ Repair }\SpecialCharTok{+}\NormalTok{ Work\_Bus }\SpecialCharTok{+} 
+\NormalTok{                               School }\SpecialCharTok{+}\NormalTok{ Health }\SpecialCharTok{+}\NormalTok{ Work\_Train }\SpecialCharTok{+}\NormalTok{ Train\_Stations }\SpecialCharTok{+}\NormalTok{ Without\_Car }\SpecialCharTok{+} 
+\NormalTok{                               Petrol\_Diesel, }\AttributeTok{data =}\NormalTok{ .)),}
+    \AttributeTok{coef\_info =} \FunctionTok{map}\NormalTok{(model, tidy)}
+\NormalTok{  )}
+
+\NormalTok{boot\_coefs }\OtherTok{\textless{}{-}}\NormalTok{ boot\_models }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{unnest}\NormalTok{(coef\_info)}
+
+\NormalTok{ci }\OtherTok{\textless{}{-}} \FunctionTok{int\_pctl}\NormalTok{(boot\_models, coef\_info)}
+\CommentTok{\# significant at 0.05}
+\NormalTok{sig }\OtherTok{\textless{}{-}}\NormalTok{ ci[}\FunctionTok{sign}\NormalTok{(ci[, }\DecValTok{2}\NormalTok{]) }\SpecialCharTok{==} \FunctionTok{sign}\NormalTok{(ci[, }\DecValTok{4}\NormalTok{]), ] }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{pull}\NormalTok{(term)}
+
+\NormalTok{boot\_coefs }\OtherTok{\textless{}{-}}\NormalTok{  boot\_coefs }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{sig =} \FunctionTok{ifelse}\NormalTok{(term }\SpecialCharTok{\%in\%}\NormalTok{ sig, }\StringTok{"TRUE"}\NormalTok{, }\StringTok{"FALSE"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(term }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{"Cards"}\NormalTok{, }\StringTok{"Health"}\NormalTok{, }\StringTok{"Petrol\_Diesel"}\NormalTok{,}\StringTok{"Repair"}\NormalTok{, }\StringTok{"School"}\NormalTok{, }\StringTok{"Train\_Stations"}\NormalTok{, }\StringTok{"Without\_Car"}\NormalTok{, }\StringTok{"Work\_Bus"}\NormalTok{, }\StringTok{"Work\_Train"}\NormalTok{))}
+
+\NormalTok{boot\_coefs2 }\OtherTok{\textless{}{-}}\NormalTok{ boot\_coefs }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{group\_by}\NormalTok{(term) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{est =} \FunctionTok{median}\NormalTok{(estimate), }\AttributeTok{lower =} \FunctionTok{quantile}\NormalTok{(estimate, }\FloatTok{0.025}\NormalTok{), }\AttributeTok{upper =} \FunctionTok{quantile}\NormalTok{(estimate, }\FloatTok{0.975}\NormalTok{))}
+
+\NormalTok{boot\_coefs }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_density}\NormalTok{(}\FunctionTok{aes}\NormalTok{(estimate, }\AttributeTok{fill =}\NormalTok{ sig), }\AttributeTok{alpha =} \FloatTok{0.7}\NormalTok{,  }\AttributeTok{color =} \StringTok{"white"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_vline}\NormalTok{(}\AttributeTok{data =}\NormalTok{ boot\_coefs2, }\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{xintercept =}\NormalTok{ est))}\SpecialCharTok{+}
+  \FunctionTok{geom\_vline}\NormalTok{(}\AttributeTok{data =}\NormalTok{ boot\_coefs2, }\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{xintercept =}\NormalTok{ lower), }\AttributeTok{color=}\StringTok{"Red"}\NormalTok{, }\AttributeTok{lty =} \DecValTok{2}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{geom\_vline}\NormalTok{(}\AttributeTok{data =}\NormalTok{ boot\_coefs2, }\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{xintercept =}\NormalTok{ upper), }\AttributeTok{color=}\StringTok{"Red"}\NormalTok{, }\AttributeTok{lty =} \DecValTok{2}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{geom\_vline}\NormalTok{(}\AttributeTok{data =}\NormalTok{ boot\_coefs2, }\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{xintercept =} \DecValTok{0}\NormalTok{), }\AttributeTok{color=}\StringTok{"Blue"}\NormalTok{, }\AttributeTok{lty =} \DecValTok{2}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{term, }\AttributeTok{scales =} \StringTok{"free"}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.x=} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size =} \DecValTok{6}\NormalTok{),}
+        \AttributeTok{axis.text.y=} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size =} \DecValTok{6}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
 
 \begin{figure}[H]
 
