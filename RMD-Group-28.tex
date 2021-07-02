@@ -99,6 +99,7 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{float}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
@@ -264,7 +265,7 @@ Firstly, filter and merge data.
 We get a complete data set called Data, and summarize histogram plots
 (Fig. \ref{fig:his}) are illustrated to detect data patterns.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{RMD-Group-28_files/figure-latex/unnamed-chunk-3-1} 
 
@@ -273,7 +274,7 @@ We get a complete data set called Data, and summarize histogram plots
 \caption{\label{fig:his} Histogram plot of variables}\label{fig:unnamed-chunk-3}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{RMD-Group-28_files/figure-latex/unnamed-chunk-4-1} 
 
@@ -282,15 +283,7 @@ We get a complete data set called Data, and summarize histogram plots
 \caption{\label{fig:scatter} Scatter plot of dependent variabls vs response variable}\label{fig:unnamed-chunk-4}
 \end{figure}
 
-The scatter (Fig. \ref{fig:scatter}) and correlation (Fig.
-\ref{fig:cor}) plots are proposed to explore the relationship among
-variables. We notice that these are some extreme values in the variables
-of ``Cards'', ``Expenditure'', ``Killed\_Injured'', ``Mileage'',
-``Petrol\_Diesel'', ``Train\_Stations'', which should be kept in mind.
-We also find the ``More\_Car'', ``Without\_Car'', ``Work\_Bus'',
-``Work\_Train'' have a linear relationship with Satisfaction.
-
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{RMD-Group-28_files/figure-latex/unnamed-chunk-5-1} 
 
@@ -316,7 +309,7 @@ with all variables.
 Plot the Fitted values against Residuals and Q-Q plot to assess our
 assumptions.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics{RMD-Group-28_files/figure-latex/unnamed-chunk-7-1} 
 
@@ -339,6 +332,8 @@ assumptions.
   assumption is satisfied.
 \item
   Residuals vs leverage (right bottom) figures out special observations.
+  The strong influence points do not deviate from the regression
+  estimation seriously.
 \item
   According to the correlation plot and VIF, there is obvious
   multicollinearity among variables.
@@ -449,7 +444,7 @@ variables at 95\% level and obtain its confidence interval of parameter
 estimation and their observations.This process should be repeated 1000
 times.
 
-\begin{figure}
+\begin{figure}[H]
 
 {\centering \includegraphics[width=0.8\linewidth]{RMD-Group-28_files/figure-latex/unnamed-chunk-11-1} 
 

@@ -1,3 +1,6 @@
 "0","# Diagnostic chart"
 "0","par(mfrow = c(2, 2))"
 "0","plot(fit)"
+"2","Error in UseMethod(""fit"") : 
+  no applicable method for 'fit' applied to an object of class ""c('double', 'numeric')""
+"

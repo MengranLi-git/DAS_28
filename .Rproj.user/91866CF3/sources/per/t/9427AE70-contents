@@ -2,16 +2,17 @@
 title: "**Factors influencing Scots' satisfaction with public transport**"
 author: "*Group 28: Aishwin Tikku, Mengran Li, Steven Kwok, Shaoquan Li, Shuning Li*"
 output:
-
   pdf_document:
     latex_engine: pdflatex
     number_sections: no
     keep_tex: true
 fig_caption: yes
+header-includes:
+ \usepackage{float}
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, eval = TRUE, warning = FALSE, message = FALSE, comment = NA)
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, warning = FALSE, message = FALSE, comment = NA, fig.pos = 'H')
 ```
 
 ```{r libraries}
@@ -151,7 +152,7 @@ Data$DateCode <- as.factor(Data$DateCode)
 
 We get a complete data set called Data, and summarize histogram plots (Fig. \ref{fig:his}) are illustrated to detect data patterns. 
 
-```{r,fig.align='center', echo = FALSE, eval = TRUE, warning = FALSE, message = FALSE, fig.cap="\\label{fig:his} Histogram plot of variables"}
+```{r,fig.align='center',fig.width=8, fig.height=4, echo = FALSE, eval = TRUE, warning = FALSE, message = FALSE, fig.cap="\\label{fig:his} Histogram plot of variables"}
 # density plot
 Data[, -c(1, 2)] %>%
   gather(key = "variable", value = "value") %>%
@@ -162,7 +163,7 @@ Data[, -c(1, 2)] %>%
         axis.text.y= element_text(size = 4))
 ```
 
-```{r, fig.align='center',echo = FALSE, eval = TRUE, warning = FALSE, message = FALSE, fig.cap="\\label{fig:scatter} Scatter plot of dependent variabls vs response variable"}
+```{r, fig.width=6, fig.height=4, fig.align='center',echo = FALSE, eval = TRUE, warning = FALSE, message = FALSE, fig.cap="\\label{fig:scatter} Scatter plot of dependent variabls vs response variable"}
 # scatter plot
 Data[, -c(1, 2)] %>%
   gather(key = "variable", value = "value") %>%
@@ -174,9 +175,7 @@ Data[, -c(1, 2)] %>%
         axis.text.y= element_text(size = 4))
 ```
 
-The scatter (Fig. \ref{fig:scatter}) and correlation (Fig. \ref{fig:cor}) plots are proposed to explore the relationship among variables. We notice that these are some extreme values in the variables of "Cards", "Expenditure", "Killed_Injured", "Mileage", "Petrol_Diesel", "Train_Stations", which should be kept in mind. We also find the "More_Car", "Without_Car", "Work_Bus", "Work_Train" have a linear relationship with Satisfaction.
-
-```{r, fig.width=9.5, fig.align='center',echo = FALSE, eval = TRUE, warning = FALSE, message = FALSE, fig.cap="\\label{fig:cor} Correlation plot of variabls"}
+```{r, fig.width=5, fig.height=4, fig.align='center',echo = FALSE, eval = TRUE, warning = FALSE, message = FALSE, fig.cap="\\label{fig:cor} Correlation plot of variabls"}
 # correlation plot
 corr <- cor(na.omit(Data[, -c(1, 2)]))
 
@@ -187,7 +186,7 @@ corrplot$Z <- c(corr)
 
 ggplot(corrplot, aes(X, Y, fill = Z)) +
   geom_tile(aes(fill = Z, alpha = 0.7), show.legend = FALSE) +
-  geom_text(aes(label = round(Z, 2))) +
+  geom_text(aes(label = round(Z, 2)), size = 1.5) +
   scale_fill_gradient2(
     low = muted("#80C687"),
     mid = "white",
@@ -200,8 +199,10 @@ ggplot(corrplot, aes(X, Y, fill = Z)) +
     axis.text.x = element_text(
       angle = 30,
       vjust = .8,
-      hjust = 0.8
+      hjust = 0.8,
+      size = 7
     ),
+    axis.text.y = element_text(size = 7),
     axis.title.x = element_blank(),
     axis.title.y = element_blank()
   )
@@ -218,7 +219,7 @@ fit <- lm(Satisfaction ~ ., data = na.omit(Data[, -1]))
 
 Plot the Fitted values against Residuals and Q-Q plot to assess our assumptions.
 
-```{r, fig.align='center',echo = FALSE, eval = TRUE, warning = FALSE, message = FALSE, fig.cap="\\label{fig:dia} Regression diagnosis results"}
+```{r,fig.width=6, fig.height=6,  fig.align='center',echo = FALSE, eval = TRUE, warning = FALSE, message = FALSE, fig.cap="\\label{fig:dia} Regression diagnosis results"}
 # Diagnostic chart
 par(mfrow = c(2, 2))
 plot(fit)
@@ -230,7 +231,7 @@ plot(fit)
 
 -   Scale-location plot (left bottom) displays the points around the horizontal line are randomly distributed. The invariant variance assumption is satisfied.
 
--   Residuals vs leverage (right bottom) figures out special observations.
+-   Residuals vs leverage (right bottom) figures out special observations. The strong influence points do not deviate from the regression estimation seriously.
 
 -   According to the correlation plot and VIF, there is obvious multicollinearity among variables.
 
